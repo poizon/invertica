@@ -4,7 +4,8 @@ use warnings;
 
 require Exporter;
 our @ISA = qw(Exporter);
-our @EXPORT_OK = qw(show_movie_titles show_movie_tags show_movie_comments stb_error);
+our @EXPORT_OK = qw(show_movie_titles show_movie_tags
+                    show_movie_comments show_movie_status stb_error);
 
 # модуль обрабатывающий интерфейс согласно стр. 8
 # документа интерфейс STB.pdf
@@ -48,6 +49,7 @@ sub show_movie_tags {
     # возвращаем строку в формате JSON
     return $json_text;
 }
+
 # возвращает ссылку на хэш с комментариями и авторами
 sub show_movie_comments {
     my $movie_id = shift;
@@ -58,6 +60,19 @@ sub show_movie_comments {
     # возвращаем строку в формате JSON
     return $json_text;
 }
+
+# проверить статус фильма (скачивается)
+# и возвращает код статуса (0-3), и процент скачивания (0%,0-99%,100%)
+# процент в десятичном виде (0.99 = 99%)
+sub show_movie_status {
+    my $movie_id = shift;
+    # запрос к бд на выборку данных по статусу фильма
+    my $movie_status = _get_from_db_status($movie_id);
+    my $json_text = $json->encode($movie_status);
+    # возвращаем строку в формате JSON
+    return $json_text;
+}
+
 # заглушка для ошибки
 sub stb_error {
     return qq(
@@ -70,6 +85,12 @@ sub stb_error {
 #
 ###########
 # заглушки
+sub _get_from_db_status {
+    my $id = shift;
+    return {1, 0.33}; # 1 - скачивается, 0.30 = 30% скачано
+}
+
+#
 sub _get_from_db_comments {
     my $id = shift;
     my %hash = ('ivanovIvan' => 'Фильм что надо!',
