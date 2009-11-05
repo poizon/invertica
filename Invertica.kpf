@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="eb9fd10b-bd36-4d29-ad3a-a718f5ffa7c3" kpf_version="4" name="Invertica.kpf">
+<preference-set idref="eb9fd10b-bd36-4d29-ad3a-a718f5ffa7c3">
+  <boolean id="import_live">1</boolean>
+</preference-set>
+</project>
