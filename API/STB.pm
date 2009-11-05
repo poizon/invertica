@@ -243,7 +243,7 @@ sub _get_from_db_playlist {
 
 sub _get_from_db_balance {
        my $id = shift;
-       return 7500.5;
+       return [7500.5];
 }
 
 sub _get_from_db_friendlist {
