@@ -79,6 +79,7 @@ sub stb_error {
     <a href="?mode=showMovieTitles&id=100" target="_self">Получить информацию о фильме</a><br>
     <a href="?mode=showMovieTags&id=100" target="_self">Получить список тэгов</a><br>
     <a href="?mode=showMovieComments&id=100" target="_self">Показать комментарии</a><br>
+    <a href="?mode=showMovieStatus&id=100" target="_self">Показать статус</a><br>
     <!-- <a href="?mode=..." target="_self">...</a><br> -->
     );
 }
