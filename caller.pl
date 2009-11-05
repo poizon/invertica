@@ -2,7 +2,8 @@
 use strict;
 
 use lib qw(.);
-use API::STB qw (show_movie_titles show_movie_tags show_movie_comments stb_error);
+use API::STB qw (show_movie_titles show_movie_tags show_movie_comments
+                 show_movie_status stb_error);
 use CGI qw(header param);
 
 print header(-charset => 'utf8');
@@ -13,6 +14,7 @@ my $id = param('id') || 0;
 my %hash = ( 'showMovieTitles'   => \&show_movie_titles,
              'showMovieTags'     => \&show_movie_tags,
              'showMovieComments' => \&show_movie_comments,
+             'showMovieStatus'   => \&show_movie_status,
              'error'             => \&stb_error,
             );
 
