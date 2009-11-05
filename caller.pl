@@ -2,8 +2,7 @@
 use strict;
 
 use lib qw(.);
-use API::STB qw (show_movie_titles show_movie_tags show_movie_comments
-                 show_movie_status stb_error);
+use API::STB qw (:ALL);
 use CGI qw(header param);
 
 print header(-charset => 'utf8');
@@ -15,6 +14,15 @@ my %hash = ( 'showMovieTitles'   => \&show_movie_titles,
              'showMovieTags'     => \&show_movie_tags,
              'showMovieComments' => \&show_movie_comments,
              'showMovieStatus'   => \&show_movie_status,
+             'showUserPlaylist'  => \&show_user_playlist,
+             'showUserBalance'   => \&show_user_balance,
+             'showUserFriends'   => \&show_user_friends,
+             'addMovieRate'      => \&add_movie_rate,
+             'addMovieComment'   => \&add_movie_comment,
+             'addMovieToPlaylist'=> \&add_movie_to_playlist,
+             'addMovieTag'       => \&add_movie_tag,
+             'addMoviePay'       => \&add_movie_pay,
+             'showUserRecomends' => \&show_user_recomends,
              'error'             => \&stb_error,
             );
 
