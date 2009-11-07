@@ -9,15 +9,15 @@ our @EXPORT_OK = qw(show_movie_titles show_movie_tags
                     show_movie_comments show_movie_status show_user_playlist
                     show_user_balance show_user_friends add_movie_rate
                     add_movie_comment add_movie_to_playlist add_movie_tag
-                    add_movie_pay show_user_recomends
-                    stb_error);
+                    add_movie_pay show_user_recomends add_movie_favor
+                    );
                     
 our %EXPORT_TAGS = (ALL => [qw (show_movie_titles show_movie_tags
                     show_movie_comments show_movie_status show_user_playlist
                     show_user_balance show_user_friends add_movie_rate
                     add_movie_comment add_movie_to_playlist add_movie_tag
-                    add_movie_pay show_user_recomends
-                    stb_error)]);                    
+                    add_movie_pay show_user_recomends add_movie_favor
+                    )]);                    
 
 # модуль обрабатывающий интерфейс согласно стр. 8
 # документа интерфейс STB.pdf
@@ -206,29 +206,6 @@ sub add_movie_pay {
 ################################################################
 # ЗАГЛУШКИ И ВРЕМЕННЫЕ ФУНКЦИИ
 ################################################################
-
-# заглушка для ошибки
-sub stb_error {
-    return qq(
-    <hr width=100%>
-    <a href="?mode=showMovieTitles&id=100" target="_self">Получить информацию о фильме</a><br>
-    <a href="?mode=showMovieTags&id=100" target="_self">Получить список тэгов</a><br>
-    <a href="?mode=showMovieComments&id=100" target="_self">Показать комментарии</a><br>
-    <a href="?mode=showMovieStatus&id=100" target="_self">Показать статус</a><br>
-    <hr width=100%>
-    <a href="?mode=showUserPlaylist&id=100" target="_self">Показать плейлисты пользователя</a><br>
-    <a href="?mode=showUserBalance&id=100" target="_self">Показать баланс пользователя</a><br>
-    <a href="?mode=showUserFriends&id=100" target="_self">Показать список друзей пользователя</a><br>
-    <a href="?mode=showUserRecomends&id=100" target="_self">Показать рекомендации</a><br>
-    <hr width=100%>
-    <a href="?mode=addMovieRate&id=100" target="_self">Изменить рейтинг</a><br>
-    <a href="?mode=addMovieComment&id=100" target="_self">Добавить отзыв</a><br>
-    <a href="?mode=addMovieToPlaylist&id=100" target="_self">Добавить фильм в плейлист</a><br>
-    <a href="?mode=addMovieTag&id=100" target="_self">Добавить тэг</a><br>
-    <a href="?mode=addMoviePay&id=100" target="_self">Оплатить</a><br>
-    <!-- <a href="?mode=..." target="_self">...</a><br> -->
-    );
-}
 #
 ###########
 # заглушки
