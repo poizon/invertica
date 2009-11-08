@@ -10,7 +10,9 @@ our @EXPORT_OK = qw(show_movie_titles show_movie_tags
                     show_user_balance show_user_friends add_movie_rate
                     add_movie_comment add_movie_to_playlist add_movie_tag
                     add_movie_pay show_user_recomends add_movie_favor
+                    show_menu show_content
                     );
+                    
                     
 our %EXPORT_TAGS = (FILM => [qw (show_movie_titles show_movie_tags
                     show_movie_comments show_movie_status show_user_playlist
@@ -18,7 +20,7 @@ our %EXPORT_TAGS = (FILM => [qw (show_movie_titles show_movie_tags
                     add_movie_comment add_movie_to_playlist add_movie_tag
                     add_movie_pay show_user_recomends add_movie_favor
                     )],
-                    MENU => [qw()]
+                    MENU => [qw(show_menu show_content)]
                     );                    
 
 # модуль обрабатывающий интерфейс согласно стр. 8
@@ -31,8 +33,9 @@ use JSON;
 # объект для JSON
 my $json=JSON->new();
 
-# заглушки вынесем в отдельный файл
+# заглушки вынесем в отдельные файлы
 require 'API/temp_sub.pl';
+require 'API/temp_sub2.pl';
 ###########################################################
 ################ FILMS ####################################
 ###########################################################
@@ -212,14 +215,19 @@ sub add_movie_pay {
 
 ##################################################
 ################# MENU ###########################
+# данные функции реализованы для демонстрации
+# работы с меню в STB
 ##################################################
+# отображаем меню пользователя
+# возвращает список объектов меню в виде html
+sub show_menu {
+    my $in = shift;
+    return _get_from_db_menu_objects();
+}
+
 sub show_content {
     my $in = shift;
     
-}
-
-sub show_menu {
-    my $in = shift;    
 }
 
 1;

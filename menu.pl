@@ -6,9 +6,9 @@ use strict;
 
 use lib qw(.);
 use CGI qw(header Vars);
-
+use API::STB qw (:MENU);
 # входные данные
-my %in=Vars();
+my %in = Vars();
 
 my %mode = (
             content => \&show_content,
@@ -17,7 +17,7 @@ my %mode = (
 
 print header(-charset => 'utf8');
 
-if(!$in{mode}) {
+if (!$in{mode}) {
     print $mode{default}->(\%in);
 } else {
     print $mode{$in{mode}}->(\%in);
