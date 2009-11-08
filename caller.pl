@@ -1,8 +1,11 @@
 #!/usr/bin/perl -w
+#
+$|=1;
+
 use strict;
 
 use lib qw(.);
-use API::STB qw (:ALL);
+use API::STB qw (:FILM);
 use CGI qw(header param);
 
 print header(-charset => 'utf8');
