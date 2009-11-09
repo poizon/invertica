@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 use strict;
-# òåñòèì SOAP
+# Ñ‚ÐµÑÑ‚Ð¸Ð¼ SOAP
 use SOAP::Lite;
 
 my $client = SOAP::Lite->service('http://perlmonks.org.ru/api3.wsdl');
