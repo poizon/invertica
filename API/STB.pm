@@ -227,7 +227,7 @@ sub show_menu {
 
 sub show_content {
     my $in = shift;
-    
+    return _get_from_db_content_objects();
 }
 
 1;
