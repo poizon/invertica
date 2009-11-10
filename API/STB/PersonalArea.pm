@@ -266,4 +266,12 @@ sub add_movie_playlist {
     my ($playlist_id, $movie_id) = @_;
     #
 }
+
+# удалить фильм из плейлиста
+# аргументы: playlist_id, movie_id (при условии что плейлисты уникальны для БД)
+# возвращает 1-  успех, 0 - ошибка
+sub rm_movie_playlist {
+    my ($playlist_id, $movie_id) = @_;
+    #
+}
 1;
