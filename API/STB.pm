@@ -105,7 +105,7 @@ sub show_movie_status {
 
 # показывает список плейлистов пользователя
 # возвращает ссылку на хэш: playlistid => "Название плейлиста"
-# !!!! ПЕРЕНЕСТИ В PersoanlArea.pm!
+# !!!! ПЕРЕНЕСТИ В PersoanlArea.pm! ПЕРСЕЧЕНИЕ!!!
 sub show_user_playlist {
     my $user_id = shift;
     my $user_playlist = _get_from_db_playlist($user_id);
@@ -123,8 +123,10 @@ sub show_user_balance {
     # возвращаем строку в формате JSON
     return $json_text;
 }
+
 # по кнопке предложить другу  выводит список друзей
 # возвращает ссылку на массив с именами друзей
+# !!! ПЕРЕНЕСТИ В PersoanlArea.pm ПЕРСЕЧЕНИЕ!!!
 sub show_user_friends {
     my $user_id = shift;
     my $user_friend_list = _get_from_db_friendlist($user_id);
