@@ -30,7 +30,58 @@ my %hash = ( 'showMovieTitles'   => \&show_movie_titles,
              'error'             => \&stb_error,
              #------------------------------------------
              # ЛИЧНЫЙ КАБИНЕТ ##########################
-             
+             'showUserWatched' => \&show_user_watched,
+             'showMovieFriends' => \&show_movie_friends,
+             'showUserTags' => \&show_user_tags,
+             'orderMovie' => \&order_movie,
+             'editMovieTags' => \&edit_movie_tags,
+             'showUserLib' => \&show_user_lib,
+             'showFileDetails' => \&show_file_details,
+             'addFileComment' => \&add_file_comment,
+             'shareFileFriends' => \&share_file_friends,
+             'showGroupList' => \&show_group_list,
+             'joinGroup' => \&join_group,
+             'searchGroup' => \&search_group,
+             'showGroupDetails' => \&show_group_details,
+             'showTopMovieGroup' => \&show_top_movie_group,
+             'offerMovieToTop' => \&offer_movie_to_top,
+             'showGroupComments' => \&show_group_comments,
+             'voteGroupMovie' => \&vote_group_movie,
+             'addGroupComment' => \&add_group_comment,
+             'addGroupContent' => \&add_group_content,
+             'showGroupMembers' => \&show_group_members,
+             'showUserAbout' => \&show_user_about,
+             'showUserMessages' => \&show_user_messages,
+             'showUserGroup' => \&show_user_group,
+             'showUserPlaylist' => \&show_user_playlist,
+             'addPlaylist' => \&add_playlist,
+             'addMoviePlaylist' => \&add_movie_playlist,
+             'rmMoviePlaylist' => \&rm_movie_playlist,
+             'configVisibility' => \&config_visibility,
+             'showUserFriends' => \&show_user_friends,
+             'showFriendShort' => \&show_friend_short,
+             'showFriendDetails' => \&show_friend_details,
+             'inviteFriends' => \&invite_friends,
+             'searchVidimax' => \&search_vidimax,
+             'addFromFacebook' => \&add_from_facebook,
+             'addFromGmail' => \&add_from_gmail,
+             'addFromTwitter' => \&add_from_twitter,
+             'addFromVkontakte' => \&add_from_vkontakte,
+             'changePassword' => \&change_password,
+             'showUserProfiles' => \&show_user_profiles,
+             'showWatchedStatistic' => \&show_watched_statistic,
+             'addProfile' => \&add_profile,
+             'rmProfile' => \&rm_profile,
+             'saveProfileChanges' => \&save_profile_changes,
+             'showPaidStatistic' => \&show_paid_statistic,
+             'showUserBalance' => \&show_user_balance,
+             'payYandex' => \&pay_yandex,
+             'payRapid' => \&pay_rapid,
+             'addTopBox' => \&add_top_box,
+             'rmTopBox' => \&rm_top_box,
+             'changeTopBox' => \&change_top_box,
+             'requestSupport' => \&request_support,
+             'showKb' => \&show_kb,
             );
 
 if(!param) {
@@ -40,6 +91,7 @@ if(!param) {
 }
 
 #
+# переписать с шаблоном
 # заглушка для ошибки
 sub stb_error {
     return qq(

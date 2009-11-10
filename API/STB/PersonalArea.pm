@@ -4,9 +4,30 @@ use warnings;
 
 require Exporter;
 our @ISA = qw(Exporter);
-our @EXPORT_OK = qw(show_user_watched show_movie_friends show_user_tags);
+our @EXPORT_OK = qw(show_user_watched show_movie_friends show_user_tags order_movie edit_movie_tags
+show_user_lib show_file_details add_file_comment share_file_friends show_group_list join_group
+search_group show_group_details show_top_movie_group offer_movie_to_top show_group_comments
+vote_group_movie add_group_comment add_group_content show_group_members show_user_about
+show_user_messages show_user_group show_user_playlist add_playlist add_movie_playlist rm_movie_playlist
+config_visibility show_user_friends show_friend_short show_friend_details invite_friends
+search_vidimax add_from_facebook add_from_gmail add_from_twitter add_from_vkontakte
+change_password show_user_profiles show_watched_statistic add_profile rm_profile
+save_profile_changes show_paid_statistic show_user_balance pay_yandex pay_rapid
+add_top_box rm_top_box change_top_box request_support show_kb);
 
-our %EXPORT_TAGS = (ALL => [qw(show_user_watched show_movie_friends show_user_tags)]
+our %EXPORT_TAGS = (ALL => [qw(show_user_watched show_movie_friends show_user_tags order_movie
+                            edit_movie_tags show_user_lib show_file_details add_file_comment
+                            share_file_friends show_group_list join_group search_group
+                            show_group_details show_top_movie_group offer_movie_to_top
+                            show_group_comments vote_group_movie add_group_comment add_group_content
+                            show_group_members show_user_about show_user_messages show_user_group
+                            show_user_playlist add_playlist add_movie_playlist rm_movie_playlist
+                            config_visibility show_user_friends show_friend_short show_friend_details
+                            invite_friends search_vidimax add_from_facebook add_from_gmail
+                            add_from_twitter add_from_vkontakte change_password show_user_profiles
+                            show_watched_statistic add_profile rm_profile save_profile_changes
+                            show_paid_statistic show_user_balance pay_yandex pay_rapid add_top_box
+                            rm_top_box change_top_box request_support show_kb)]
                     
                     );
 
@@ -368,5 +389,131 @@ sub add_from_vkontakte {
 #####
 ## ОФИС
 
+# изменить пароль
+# аргументы: user_id, old_password, new_password
+# возвращает 1-  успех, 0 - ошибка
+sub change_password {
+    my ($user_id, $old_password, $new_password) = @_;
+    #
+}
+
+# показать список профайлов
+# аргуенты user_id
+# возвращает ссылку на хэш, в котором
+# содержится вся информация о всех профайлах пользователя
+sub show_user_profiles {
+    my $user_id = shift;
+    #
+}
+
+
+# показывает статистику потребления по просмотрам
+# за период
+# аргументы: user_id, start_date, end_date
+# возвращает ссылку на хэш
+sub show_watched_statistic {
+    my ($user_id, $start_date, $end_date) = @_;
+    #
+}
+
+# добавить профайл
+# аргументы: user_id, profile_name
+# возвращает 1-  успех, 0 - ошибка
+sub add_profile {
+    my ($user_id, $profile_name) = @_;
+    #
+}
+
+# удалить профайл
+# аргументы: user_id, profile_name
+# возвращает 1-  успех, 0 - ошибка
+sub rm_profile {
+    my ($user_id, $profile_name) = @_;
+    #
+}
+
+# сохранить изменения в профайле
+# аргументы: user_id, profile_name, \%hash_ref (входные данные от клиента)
+# возвращает 1-  успех, 0 - ошибка
+sub save_profile_changes {
+    my ($user_id, $profile_name, $hash_ref) = @_;
+    #
+}
+
+# показывает статистику потребления по платежам
+# за период
+# аргументы: user_id, start_date, end_date
+# возвращает ссылку на хэш
+sub show_paid_statistic {
+    my ($user_id, $start_date, $end_date) = @_;
+    #
+}
+
+# показывает остаток на лицевом счете
+# аргументы: user_id
+# возвращает число: %.2f
+# использует функцию из SOAP::LB.pm
+sub show_user_balance {
+    my $user_id = shift;
+    #
+}
+
+# платеж с яндекса
+sub pay_yandex {
+    #
+}
+
+# платеж с рапида
+sub pay_rapid {
+    #
+}
+
+# добавить приставку
+# аргументы: user_id, \%hash (входные данные)
+# возвращает 1-  успех, 0 - ошибка
+sub add_top_box {
+    my ($user_id, $hash_ref) = @_;
+    #
+}
+
+# удалить приставку
+# аргументы: user_id, sn_topbox (?) - s/n приставки
+sub rm_top_box {
+    my ($user_id, $sn_topbox) = @_;
+    #
+}
+
+# изменить параметры приставки
+# аргументы: user_id, \%hash (входные данные)
+# возвращает 1-  успех, 0 - ошибка
+sub change_top_box {
+    my ($user_id, $hash_ref) = @_;
+    #
+}
+
+##
+# ПОДДЕРЖКА
+
+# написать в тэх.поддержку
+# аргументы: user_id, \%hash (входные данные)
+# $hash{subject} => ''; $hash{message}=>''
+# возвращает 1-  успех, 0 - ошибка
+sub request_support {
+    my ($user_id, $hash_ref) = @_;
+    #
+}
+
+# отобразить данные из базы знаний, разделы, статьи
+# аргументы: keywords (по умолчанию выводим все разделы)
+# возвращаем ссылку на хэш, примерно такой:
+# $hash{section}=>[article1, article2, ... , articlen]
+sub show_kb {
+    my $keywords = shift || undef;
+    if(defined $keywords) {
+        # show smth
+    } else {
+        # show all;
+    }
+}
 
 1;

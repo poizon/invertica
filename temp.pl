@@ -1,24 +1,22 @@
 #!/usr/bin/perl -w
+
+use warnings;
 use strict;
 
-print '
-=====================================
-========= Структура модулей =========
+# тест генератор для апи
 
-        API/
-        |    STB/
-        |    |    Common.pm
-        |    |    Friends.pm
-        |    |    Playlist.pm
-        |    |    Movie.pm
-        |    |    Group.pm
-        |    |    Content.pm
-        |    SOAP/
-        |    |    vKontakte.pm
-        |    |    LB.pm
-        |    |    IMHO.pm
-        |    |    Vidimax.pm
-        |    WEB/
-        |    |    Vitrina.pm
-';                
-
+open(FILE,"<","API/STB/PersonalArea.pm") || die "$!";
+while(<FILE>) {
+    chomp;
+    next unless /^sub/;
+    /^sub\s(.+)\s\{/;
+    #print $1 . " ";
+    my $sub = '\&'.$1.',';
+    my (@caller) = split(/_/,$1);
+    my $call = undef;
+    foreach my $part (@caller) {
+        $part = ucfirst $part;
+        $call .= $part;
+    }
+    #print "\t\t\t'".lcfirst $call."' => $sub\n";
+}
