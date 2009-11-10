@@ -28,6 +28,9 @@ my %hash = ( 'showMovieTitles'   => \&show_movie_titles,
              'showUserRecomends' => \&show_user_recomends,
              'addMovieFavor'     => \&add_movie_favor,
              'error'             => \&stb_error,
+             #------------------------------------------
+             # ЛИЧНЫЙ КАБИНЕТ ##########################
+             
             );
 
 if(!param) {

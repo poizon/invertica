@@ -105,6 +105,7 @@ sub show_movie_status {
 
 # показывает список плейлистов пользователя
 # возвращает ссылку на хэш: playlistid => "Название плейлиста"
+# !!!! ПЕРЕНЕСТИ В PersoanlArea.pm!
 sub show_user_playlist {
     my $user_id = shift;
     my $user_playlist = _get_from_db_playlist($user_id);
@@ -202,6 +203,7 @@ sub add_movie_tag {
     # возвращаем строку в формате JSON
     return $json_text;
 }
+
 # оплатить фильм
 # аргументы: id фильма, id пользователя
 # возвращает 1-  успех, 0 - ошибка

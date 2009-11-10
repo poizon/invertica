@@ -4,8 +4,8 @@ use strict;
 use SOAP::Lite;
 
 my $client = SOAP::Lite->service('http://perlmonks.org.ru/api3.wsdl');
-$client->proxy('http://127.0.0.1:34012');
-$client->getTelClass;
+#$client->proxy('http://127.0.0.1:34012');
+$client->getTelClassz;
 
 #foreach (@services) {
 #    print $_,"\n";
