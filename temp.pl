@@ -19,4 +19,7 @@ while(<FILE>) {
         $call .= $part;
     }
     #print "\t\t\t'".lcfirst $call."' => $sub\n";
+    print "<tr><td><a href=\"?mode=".lcfirst $call."&id=100\" target=\"_self\">Название</a></td><td>Описание</td></tr>\n";
 }
+
+#<tr><td>link</td><td>descr</td></tr>
