@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Рабочее место владельца контента</title>
+</head>
+	<script type="text/javascript" src="js/swfobject.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.js"></script>
+	<script type="text/javascript" src="js/jquery.asmselect.js"></script>
+	<script type="text/javascript" src="js/ui.datepicker.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("select[multiple]").asmSelect({
+				addItemTarget: 'bottom',
+				animate: true,
+				highlight: true,
+				sortable: true
+			});
+		}); 
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#example').attachDatepicker();
+			$('#exampleRange').attachDatepicker({
+				rangeSelect: true,
+				yearRange: '2009:2020',
+				firstDay: 1
+			});
+		});
+	</script>
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+<body>
+
+	<!-- Блок страницы задающий общую, минимальную ширину страницы... -->
+	<div class="AllBody">
+
+		<!-- Шапка... -->
+		<div class="HeaderBlock">
+		
+			<!-- Логотип... -->
+			<div class="Logo"></div>
+			<!-- ...Логотип -->
+			
+			<!-- Главное меню... -->
+				<div class="MenuBox">
+					<div class="MnuMyResourcesOff" onclick="document.location='index.html'" onmouseover="this.className='MnuMyResourcesOn'" onmouseout="this.className='MnuMyResourcesOff'"></div>
+					<div class="MnuMarketOff" onclick="document.location='market.html'" onmouseover="this.className='MnuMarketOn'" onmouseout="this.className='MnuMarketOff'"></div>
+					<div class="MnuContactOff" onclick="document.location='#'" onmouseover="this.className='MnuContactOn'" onmouseout="this.className='MnuContactOff'"></div>
+					<div class="MnuStatisticsSel" onclick="document.location='stat.html'"></div>
+					<div class="MnuAnalyticsOff" onclick="document.location='#'" onmouseover="this.className='MnuAnalyticsOn'" onmouseout="this.className='MnuAnalyticsOff'"></div>
+					<div class="MnuPersonalareaOff" onclick="document.location='cab.html'" onmouseover="this.className='MnuPersonalareaOn'" onmouseout="this.className='MnuPersonalareaOff'"></div>
+				</div>
+			<!-- ...Главное меню -->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			<div class="HeadLine"></div>
+			
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			
+			<!-- Тело страницы... -->
+		
+				<div class="h1">Статистика</div>
+
+				<!-- Рамка... -->
+				<div class="FrameTop"></div>
+				<div class="FrameMid">
+
+				<form id="form1" name="form1" method="post" action="">
+				
+						<div class="FrmColLeft">
+
+
+							<table style="border: 0;" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<div class="FrmLabel">Видео дорожка</div>
+										<select style="width: 185px;" name="Video" id="Video" onchange="MM_jumpMenu('parent',this,0)">
+											<option value="1">Видео дорожка 1</option>
+											<option value="2">Видео дорожка 2</option>
+											<option value="2">Видео дорожка 3</option>
+										</select>
+									</td>
+									<td>
+										<div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div>
+									</td>
+									<td>
+										<div class="FrmLabel">Размер</div>
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+													<td class="FrmInput"><input style="width: 173px;" type="text" name="Name" id="Name" /></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+
+
+
+
+
+							<fieldset>
+							<div class="h4">По распрастранению через витрины &nbsp;<input type="checkbox" name="checkbox" id="checkbox" /></div>
+							<table style="width: 380px; border: 0; padding: 0 0 0 15px;" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<select style="width: 380px;" id="cities" multiple="multiple" name="cities[]" title="Выбрать витрины">
+											<option selected="selected">Инвертика</option>
+											<option selected="selected">Стрим</option>
+											<option selected="selected">Акадо</option>
+										</select>
+									</td>
+								</tr>
+							</table>
+							<div class="BtnBoxField">
+								<div class="BtnSelectOff" onclick="document.location='#'" onmouseover="this.className='BtnSelectOn'" onmouseout="this.className='BtnSelectOff'"></div>
+								<div class="BtnUnselectOff" onclick="document.location='#'" onmouseover="this.className='BtnUnselectOn'" onmouseout="this.className='BtnUnselectOff'"></div>
+							</div>
+							</fieldset>
+
+
+
+							<fieldset>
+							<div class="h4">По медиаобъектам &nbsp;<input type="checkbox" name="checkbox" id="checkbox" /></div>
+							<table style="width: 380px; border: 0; padding: 0 0 0 15px;" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<select style="width: 380px;" id="cities" multiple="multiple" name="cities[]" title="Выбрать объекты">
+											<option>Терминатор 4: Да придет спаситель</option>
+											<option>Матрица</option>
+											<option>Парк культуры и отдыха</option>
+											<option>Беглый огонь</option>
+											<option>Прямой контакт</option>
+											<option>Феи: Потерянное сокровище</option>
+											<option>Путь войны</option>
+											<option>Пила 6</option>
+										</select>
+									</td>
+								</tr>
+							</table>
+							<div class="BtnBoxField">
+								<div class="BtnSelectOff" onclick="document.location='#'" onmouseover="this.className='BtnSelectOn'" onmouseout="this.className='BtnSelectOff'"></div>
+								<div class="BtnUnselectOff" onclick="document.location='#'" onmouseover="this.className='BtnUnselectOn'" onmouseout="this.className='BtnUnselectOff'"></div>
+							</div>
+							</fieldset>
+
+
+							<fieldset>
+							<div class="h4">По распрастранению в регионах &nbsp;<input type="checkbox" name="checkbox" id="checkbox" /></div>
+							<table style="width: 380px; border: 0; padding: 0 0 0 15px;" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<select style="width: 380px;" id="cities" multiple="multiple" name="cities[]" title="Выбрать регионы">
+											<option selected="selected">Москва</option>
+											<option selected="selected">Петербург</option>
+											<option>Екатеринбург</option>
+											<option>Новгород</option>
+											<option>Волгоград</option>
+											<option>Сочи</option>
+											<option>Владимир</option>
+											<option>Ярославль</option>
+										</select>
+									</td>
+								</tr>
+							</table>
+							<div class="BtnBoxField">
+								<div class="BtnSelectOff" onclick="document.location='#'" onmouseover="this.className='BtnSelectOn'" onmouseout="this.className='BtnSelectOff'"></div>
+								<div class="BtnUnselectOff" onclick="document.location='#'" onmouseover="this.className='BtnUnselectOn'" onmouseout="this.className='BtnUnselectOff'"></div>
+							</div>
+							</fieldset>
+
+
+						</div>
+					
+						<div class="FrmColRight">
+
+
+
+							<table style="border: 0;" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<div class="FrmLabel">Отчетный период</div>
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td class="FrmInput" style="width: 173px;">
+													<!-- Календарь... -->
+													<input style="width: 173px; left: -1px; text-align: left;" type="text" id="exampleRange" value="" />
+													<!-- Выбор конкретной даты -->
+													<!--<input type="text" id="example" value="" />-->
+													<!-- ...Календарь -->
+												</td>
+											</tr>
+										</table>
+									</td>
+									<td>
+										<div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div>
+									</td>
+									<td style="font-size: 12px; color: #81858E;">
+									<div style="width: 20px; height: 28px; clear: both;"><spacer type="block" width="20" height="28"></div>
+										<img style="border: 0; padding: 0 3px 1px 40px;" src="img/bul_green.gif" width="6" height="6">Количество продаж<br>
+										<img style="border: 0; padding: 0 3px 1px 40px;" src="img/bul_blue.gif" width="6" height="6">Объем продаж
+									</td>
+								</tr>
+							</table>
+
+							<div style="width: 10px; height: 15px; clear: both;"><spacer type="block" width="10" height="15"></div>
+
+
+							<div id="flash"><img src="img/free.gif" width="390" height="120" border="0" /></div>
+							<script type="text/javascript">
+								var fl = new SWFObject("tmp/01.swf", "movie", "390", "120", "6");
+								fl.addParam("quality", "high");
+								fl.addParam("menu", "false");
+								fl.addParam("wmode", "transparent");
+								fl.addParam("wmode", "opaque");
+								fl.write("flash");
+							</script>
+
+
+
+							<div style="width: 10px; height: 8px; clear: both;"><spacer type="block" width="10" height="8"></div>
+
+							<table class="FrmInputTab" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<th>График оплат:</th>
+									<td><input type="checkbox" name="checkbox" id="checkbox" /></td>
+									<td><div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div></td>
+									<th>График потребления:</th>
+									<td><input type="checkbox" name="checkbox" id="checkbox" /></td>
+								</tr>
+							</table>	
+
+							<fieldset>
+								<div class="h4">По возрастным группам &nbsp;<input type="checkbox" name="checkbox" id="checkbox" /></div>
+								<table class="FrmInputTab" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<th>От 18 до 25:</th>
+										<td><input type="checkbox" name="checkbox" id="checkbox" /></td>
+										<td><div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div></td>
+										<th>От 26 до 35:</th>
+										<td><input type="checkbox" name="checkbox" id="checkbox" /></td>
+									</tr>
+									<tr>
+										<th>От 36 до 50:</th>
+										<td><input type="checkbox" name="checkbox" id="checkbox" /></td>
+										<td><div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div></td>
+										<th>От 51 и старше:</th>
+										<td><input type="checkbox" name="checkbox" id="checkbox" /></td>
+									</tr>
+								</table>							
+								<div style="width: 20px; height: 20px; clear: both;"><spacer type="block" width="20" height="20"></div>
+							</fieldset>
+
+
+
+							<fieldset>
+								<div class="h4">По половому признаку &nbsp;<input type="checkbox" name="checkbox" id="checkbox" /></div>
+								<table class="FrmInputTab" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<th>Мужчины:</th>
+										<td><input type="checkbox" name="checkbox" id="checkbox" /></td>
+										<td><div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div></td>
+										<th>Женщины:</th>
+										<td><input type="checkbox" name="checkbox" id="checkbox" /></td>
+									</tr>
+								</table>							
+								<div style="width: 20px; height: 20px; clear: both;"><spacer type="block" width="20" height="20"></div>
+							</fieldset>
+							
+
+							<fieldset>
+								<div class="h4">По среднему доходу &nbsp;<input type="checkbox" name="checkbox" id="checkbox" /></div>
+								<table class="FrmInputTab" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<th>От 1000 до 2000:</th>
+										<td><input type="checkbox" name="checkbox" id="checkbox" /></td>
+										<td><div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div></td>
+										<th>От 2001 до 10000:</th>
+										<td><input type="checkbox" name="checkbox" id="checkbox" /></td>
+									</tr>
+									<tr>
+										<th>От 10001 до 20000:</th>
+										<td><input type="checkbox" name="checkbox" id="checkbox" /></td>
+										<td><div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div></td>
+										<th>От 20001 до 30000:</th>
+										<td><input type="checkbox" name="checkbox" id="checkbox" /></td>
+									</tr>
+								</table>							
+								<div style="width: 20px; height: 20px; clear: both;"><spacer type="block" width="20" height="20"></div>
+							</fieldset>
+
+
+
+						</div>
+						
+						<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+					
+				</form>
+					
+				</div>
+				<div class="FrameBot"></div>
+				<!-- ...Рамка -->
+
+				<div style="width: 40px; height: 40px; clear: both;"><spacer type="block" width="40" height="40"></div>
+
+				<!-- Рамка... -->
+				<div class="FrameTop"></div>
+				<div class="FrameMid">
+
+					<table width="830" align="center" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<th>Дата</th>
+							<th>Витрина</th>
+							<th>Медиа объект</th>
+							<th style="text-align: right;">Внутренний ID пользователя</th>
+							<th>Регион</th>
+							<th>Возростная группа</th>
+							<th>Группа дохода</th>
+							<th style="text-align: right;">Цена потребления</th>
+						</tr>
+						<tr class="ItemUnsel">
+							<td style="font-size: 12px;">01.01.09</td>
+							<td style="font-size: 12px;">Стрим</td>
+							<td style="font-size: 12px;">Терминатор</td>
+							<td style="font-size: 12px; text-align: right;">9000958885</td>
+							<td style="font-size: 12px; ">Москва</td>
+							<td style="font-size: 12px; white-space: nowrap;">От 18 до 25</td>
+							<td style="font-size: 12px; white-space: nowrap;">1200 &#8211; 3000</td>
+							<td style="font-size: 12px; text-align: right;">$2</td>
+						</tr>
+						<tr class="ItemUnsel">
+							<td style="font-size: 12px;">01.01.09</td>
+							<td style="font-size: 12px;">Акадо</td>
+							<td style="font-size: 12px;">Матрица, Беглый огонь, Прямой контакт, Парк культуры и отдыха.</td>
+							<td style="font-size: 12px; text-align: right;">9000957825</td>
+							<td style="font-size: 12px; ">Москва, Петербург, Нарофоминск.</td>
+							<td style="font-size: 12px; white-space: nowrap;">От 26 до 35</td>
+							<td style="font-size: 12px; white-space: nowrap;">1200 &#8211; 3000</td>
+							<td style="font-size: 12px; text-align: right;">$15</td>
+						</tr>
+					</table>
+					
+					<div class="BtnBox">
+						<div class="BtnExportExcellOff" onclick="document.location='addoffer.html'" onmouseover="this.className='BtnExportExcellOn'" onmouseout="this.className='BtnExportExcellOff'"></div>
+					</div>
+					
+				</div>
+				<div class="FrameBot"></div>
+				<!-- ...Рамка -->
+				
+
+			<!-- ...Тело страницы -->
+			
+			<!-- Футер... -->
+				<div class="Footer"></div>
+			<!-- ...Футер -->
+			
+		</div>
+		<!-- ...Шапка -->
+	</div>
+	<!-- ...Блок страницы задающий общую, минимальную ширину страницы -->
+
+</body>
+</html>

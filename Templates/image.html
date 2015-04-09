@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Рабочее место владельца контента</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="http://localhost/style.css" />
+
+<body>
+
+	<!-- Блок страницы задающий общую, минимальную ширину страницы... -->
+	<div class="AllBody">
+
+		<!-- Шапка... -->
+		<div class="HeaderBlock">
+		
+			<!-- Логотип... -->
+			<div class="Logo"></div>
+			<!-- ...Логотип -->
+			
+			<!-- Главное меню... -->
+				<div class="MenuBox">
+					<div class="MnuMyResourcesSel" onclick="document.location='?act=list'"></div>
+					<div class="MnuMarketOff" onclick="document.location='market.html'" onmouseover="this.className='MnuMarketOn'" onmouseout="this.className='MnuMarketOff'"></div>
+					<div class="MnuContactOff" onclick="document.location='#'" onmouseover="this.className='MnuContactOn'" onmouseout="this.className='MnuContactOff'"></div>
+					<div class="MnuStatisticsOff" onclick="document.location='stat.html'" onmouseover="this.className='MnuStatisticsOn'" onmouseout="this.className='MnuStatisticsOff'"></div>
+					<div class="MnuAnalyticsOff" onclick="document.location='#'" onmouseover="this.className='MnuAnalyticsOn'" onmouseout="this.className='MnuAnalyticsOff'"></div>
+					<div class="MnuPersonalareaOff" onclick="document.location='?act=profile'" onmouseover="this.className='MnuPersonalareaOn'" onmouseout="this.className='MnuPersonalareaOff'"></div>
+				</div>
+			<!-- ...Главное меню -->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			<div class="HeadLine"></div>
+			
+			<!-- Меню вотрого уровня... --->
+			<div class="SubMenuSel"><a href="?act=list">Каталог ресурсов</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuOff"><a href="?act=load">Загрузкa данных</a></div>
+			<!-- ...Меню вотрого уровня --->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			
+			<!-- Тело страницы... -->
+				<div class="h1"><a href="?act=detail&id=<TMPL_VAR NAME="ObjectID">">Медиа объект&nbsp;&#8212; <TMPL_VAR NAME="MediaObject"></a> / Картинка для медиа объекта</div>
+
+				<!-- Рамка... -->
+				<div class="FrameTop"></div>
+				<div class="FrameMid">
+
+					<form id="form1" name="form1" method="post">
+					
+						<div class="FrmColLeft">
+
+
+
+							<table class="FrmTabs" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<th>Имя объекта:</th>
+									<td><TMPL_VAR NAME="MediaObject"></td>
+								</tr>
+								<tr>
+									<th>Имя файла:</th>
+									<td><TMPL_VAR NAME="FileName"></td>
+								</tr>
+								<tr>
+									<th>Сделать основным:</th>
+									<td class="FrmCheckBox" stile="border: 0px;"><input type="checkbox" name="checkbox" id="checkbox" <TMPL_VAR NAME="Checked">/></td>
+								</tr>
+							</table>
+
+						</div>
+					
+						<div class="FrmColRight">
+						
+							<div align="center" style="padding-top: 10px;">
+								<img class="BigCover" src="<TMPL_VAR NAME="ImageSrc">" width="300" height="419">
+							</div>
+
+						</div>
+						
+						<div style="width: 0px; height: 0px; clear: both;"><spacer type="block" width="0" height="0"></div>
+					
+						<div class="BtnBox">
+							<input type="hidden" name="act" value="process">
+							<input type="hidden" name="form_save" value="1">
+							<input type="hidden" name="id" value="<TMPL_VAR NAME="FileId">">	
+							<div class="BtnSaveOff" onclick="document.form1.submit()" onmouseover="this.className='BtnSaveOn'" onmouseout="this.className='BtnSaveOff'"></div>
+							<div class="BtnNoSaveOff" onclick="document.location='?act=detail&id=<TMPL_VAR NAME="ObjectID">'" onmouseover="this.className='BtnNoSaveOn'" onmouseout="this.className='BtnNoSaveOff'"></div>
+							<div class="BtnDeleteOff" onclick="document.location='?act=process&flag=delete&id=<TMPL_VAR NAME="FileId">'" onmouseover="this.className='BtnDeleteOn'" onmouseout="this.className='BtnDeleteOff'"></div>
+						</div>
+					
+					</form>
+					
+				</div>
+				<div class="FrameBot"></div>
+				<!-- ...Рамка -->
+		
+			<!-- ...Тело страницы -->
+			
+			<!-- Футер... -->
+				<div class="Footer"></div>
+			<!-- ...Футер -->
+			
+		</div>
+		<!-- ...Шапка -->
+	</div>
+	<!-- ...Блок страницы задающий общую, минимальную ширину страницы -->
+
+</body>
+</html>

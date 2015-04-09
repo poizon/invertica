@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.js"></script>
+	<script type="text/javascript" src="js/jquery.asmselect.js"></script>
+	<script type="text/javascript" src="js/ui.datepicker.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("select[multiple]").asmSelect({
+				addItemTarget: 'bottom',
+				animate: true,
+				highlight: true,
+				sortable: true
+			});
+		}); 
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#example').attachDatepicker();
+			$('#exampleRange').attachDatepicker({
+				rangeSelect: true,
+				yearRange: '2009:2020',
+				firstDay: 1
+			});
+		});
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Рабочее место владельца контента</title>
+
+</head>
+
+<body>
+
+	<!-- Блок страницы задающий общую, минимальную ширину страницы... -->
+	<div class="AllBody">
+
+		<!-- Шапка... -->
+		<div class="HeaderBlock">
+		
+			<!-- Логотип... -->
+			<div class="Logo"></div>
+			<!-- ...Логотип -->
+			
+			<!-- Главное меню... -->
+				<div class="MenuBox">
+					<div class="MnuMyResourcesOff" onclick="document.location='index.html'" onmouseover="this.className='MnuMyResourcesOn'" onmouseout="this.className='MnuMyResourcesOff'"></div>
+					<div class="MnuMarketSel" onclick="document.location='market.html'"></div>
+					<div class="MnuContactOff" onclick="document.location='#'" onmouseover="this.className='MnuContactOn'" onmouseout="this.className='MnuContactOff'"></div>
+					<div class="MnuStatisticsOff" onclick="document.location='stat.html'" onmouseover="this.className='MnuStatisticsOn'" onmouseout="this.className='MnuStatisticsOff'"></div>
+					<div class="MnuAnalyticsOff" onclick="document.location='#'" onmouseover="this.className='MnuAnalyticsOn'" onmouseout="this.className='MnuAnalyticsOff'"></div>
+					<div class="MnuPersonalareaOff" onclick="document.location='cab.html'" onmouseover="this.className='MnuPersonalareaOn'" onmouseout="this.className='MnuPersonalareaOff'"></div>
+				</div>
+			<!-- ...Главное меню -->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			<div class="HeadLine"></div>
+			
+			<!-- Меню вотрого уровня... --->
+			<div class="SubMenuSel"><a href="market.html">Мои предложения</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuOff"><a href="otheroffers.html">Предложения других поставщиков</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuOff"><a href="bidding.html">Торги</a></div>
+			<!-- ...Меню вотрого уровня --->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			
+			<!-- Тело страницы... -->
+		
+				<div class="h1"><a href="market.html">Мои предложения</a> / Формирование нового предложения</div>
+
+				<!-- Рамка... -->
+				<div class="FrameTop"></div>
+				<div class="FrameMid">
+
+					<form id="form1" name="form1" method="post" action="">
+					
+						<div class="FrmColLeft">
+
+
+							<div class="FrmLabel">Название</div>
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td class="FrmInput"><input style="width: 378px;" type="text" name="RusName" id="RusName" /></td>
+								</tr>
+							</table>
+
+
+
+							<table style="border: 0;" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<div class="FrmLabel">Тип предложения</div>
+										<select style="width: 185px;" name="OfferType" id="OfferType" onchange="MM_jumpMenu('parent',this,0)">
+											<option value="1">Дистрибуция</option>
+											<option value="2">Нахаляву</option>
+											<option value="3">Еще чего-то</option>
+										</select>
+									</td>
+									<td>
+										<div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div>
+									</td>
+									<td>
+										<div class="FrmLabel">Срок контракта</div>
+										<table style="border: 0;" cellspacing="0" cellpadding="0">
+											<tr>
+												<td>
+
+													<select style="width: 50px;" name="OfferType" id="OfferType" onchange="MM_jumpMenu('parent',this,0)">
+														<option value="01">01</option>
+														<option value="02">02</option>
+														<option value="03">03</option>
+														<option value="04">05</option>
+														<option value="05">05</option>
+														<option value="06">06</option>
+														<option value="07">07</option>
+														<option value="08">08</option>
+														<option value="09">09</option>
+														<option value="10">10</option>
+													</select>
+													
+												</td>
+												<td><div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div></td>
+												<td>
+												
+													<select style="width: 125px;" name="OfferType" id="OfferType" onchange="MM_jumpMenu('parent',this,0)">
+														<option value="1">Месяц</option>
+														<option value="2">Год</option>
+													</select>
+
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+
+
+
+							<table style="border: 0;" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<div class="FrmLabel">Период действия контракта</div>
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td class="FrmInput" style="width: 173px;">
+													<!-- Календарь... -->
+													<input style="width: 173px; left: -1px; text-align: left;" type="text" id="exampleRange" value="" />
+													<!-- Выбор конкретной даты -->
+													<!--<input type="text" id="example" value="" />-->
+													<!-- ...Календарь -->
+												</td>
+											</tr>
+										</table>
+									</td>
+									<td>
+										<div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div>
+									</td>
+									<td>
+										<div class="FrmLabel">Моя цена</div>
+										<table style="border: 0;" cellspacing="0" cellpadding="0">
+											<tr>
+												<td>
+
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+													<td class="FrmInput"><input style="width: 103px;" type="text" name="Name" id="Name" /></td>
+											</tr>
+										</table>
+													
+												</td>
+												<td><div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div></td>
+												<td>
+												
+													<select style="width: 60px;" name="OfferType" id="OfferType" onchange="MM_jumpMenu('parent',this,0)">
+														<option value="1">%</option>
+														<option value="2">Руб.</option>
+													</select>
+
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+
+
+
+							<div class="FrmLabel">Медиа объекты</div>
+							<table style="width: 380px; border: 0;" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<select style="width: 380px;" id="cities" multiple="multiple" name="cities[]" title="Добавить объекты">
+											<option>Терминатор 4: Да придет спаситель</option>
+											<option>Матрица</option>
+											<option>Парк культуры и отдыха</option>
+											<option>Беглый огонь</option>
+											<option>Прямой контакт</option>
+											<option>Феи: Потерянное сокровище</option>
+											<option>Путь войны</option>
+											<option>Пила 6</option>
+										</select>
+									</td>
+								</tr>
+							</table>
+
+
+
+  							<div class="FrmLabel">Коментарии</div>
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td class="FrmInput"><textarea style="width: 380px; height: 110px;" name="Note" id="Note"></textarea></td>
+								</tr>
+							</table>
+
+						</div>
+					
+						<div class="FrmColRight">
+
+							<fieldset>
+						
+							<table style="border: 0; width: 200px;" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td style="width: 160px;"><div class="FrmLabel" style="padding-left: 15px;">Конечная цена важна:</div></td>
+									<td class="FrmCheckBox" stile="border: 0px;"><input type="checkbox" name="checkbox" id="checkbox" /></td>
+								</tr>
+							</table>
+
+							<div align="center">						
+						
+								<table style="border: 0;" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td>
+											<div class="FrmLabel">Максимальная цена</div>
+											<table style="border: 0;" cellspacing="0" cellpadding="0">
+												<tr>
+													<td>
+														<table border="0" cellspacing="0" cellpadding="0">
+															<tr>
+																<td class="FrmInput"><input style="width: 88px;" type="text" name="Name" id="Name" /></td>
+															</tr>
+														</table>
+													</td>
+													<td><div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div></td>
+													<td>
+														<select style="width: 60px;" name="OfferType" id="OfferType" onchange="MM_jumpMenu('parent',this,0)">
+															<option value="1">%</option>
+															<option value="2">Руб.</option>
+														</select>
+													</td>
+												</tr>
+											</table>
+										</td>
+										<td>
+											<div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div>
+										</td>
+										<td>
+											<div class="FrmLabel">Минимальная цена</div>
+											<table style="border: 0;" cellspacing="0" cellpadding="0">
+												<tr>
+													<td>
+														<table border="0" cellspacing="0" cellpadding="0">
+															<tr>
+																<td class="FrmInput"><input style="width: 87px;" type="text" name="Name" id="Name" /></td>
+															</tr>
+														</table>
+													</td>
+													<td><div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div></td>
+													<td>
+														<select style="width: 60px;" name="OfferType" id="OfferType" onchange="MM_jumpMenu('parent',this,0)">
+															<option value="1">%</option>
+															<option value="2">Руб.</option>
+														</select>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+								
+								<div style="width: 20px; height: 20px; clear: both;"><spacer type="block" width="20" height="20"></div>
+					
+								</div>
+							</fieldset>
+
+
+
+							<div class="FrmLabel">Регионы</div>
+							<table style="width: 380px; border: 0;" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<select style="width: 380px;" id="cities" multiple="multiple" name="cities[]" title="Добавить регионы">
+											<option selected="selected">Москва</option>
+											<option selected="selected">Петербург</option>
+											<option>Екатеринбург</option>
+											<option>Новгород</option>
+											<option>Волгоград</option>
+											<option>Сочи</option>
+											<option>Владимир</option>
+											<option>Ярославль</option>
+										</select>
+									</td>
+								</tr>
+							</table>
+
+
+  							<table style="border: 0;" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<div class="FrmLabel">Доход</div>
+										<select style="width: 185px;" name="OfferType" id="OfferType" onchange="MM_jumpMenu('parent',this,0)">
+											<option value="1">Все</option>
+											<option value="2">0–2000</option>
+											<option value="3">2001–10000</option>
+										</select>
+									</td>
+									<td>
+										<div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div>
+									</td>
+									<td>
+										<div class="FrmLabel">Пол и возраст</div>
+										<table style="border: 0;" cellspacing="0" cellpadding="0">
+											<tr>
+												<td>
+
+													<select style="width: 100px;" name="OfferType" id="OfferType" onchange="MM_jumpMenu('parent',this,0)">
+														<option value="01">Любой</option>
+														<option value="02">Мужской</option>
+														<option value="03">Женский</option>
+													</select>
+													
+												</td>
+												<td><div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div></td>
+												<td>
+												
+													<select style="width: 75px;" name="OfferType" id="OfferType" onchange="MM_jumpMenu('parent',this,0)">
+														<option value="1">Все</option>
+														<option value="2">От 18</option>
+														<option value="2">От 35</option>
+													</select>
+
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+
+
+							<div class="FrmRadio">
+								<label><input name="RadioGroup1" type="radio" id="RadioGroup1_0" value="radio" checked="checked" /><span style="font-size: 13px;">Создать отдельное предложение по каждому объекту</span></label>
+								<br />
+								<label><input type="radio" name="RadioGroup1" value="radio" id="RadioGroup1_1" /><span style="font-size: 13px;">Создать одно оптовое предложение на группу объектов</span></label>
+							</div>
+
+						</div>
+						
+						<div style="width: 0px; height: 0px; clear: both;"><spacer type="block" width="0" height="0"></div>
+					
+						<div class="BtnBox">
+							<div class="BtnPostOff" onclick="document.location='#'" onmouseover="this.className='BtnPostOn'" onmouseout="this.className='BtnPostOff'"></div>
+							<div class="BtnSaveOff" onclick="document.location='#'" onmouseover="this.className='BtnSaveOn'" onmouseout="this.className='BtnSaveOff'"></div>
+						</div>
+					
+					</form>
+					
+				</div>
+				<div class="FrameBot"></div>
+				<!-- ...Рамка -->
+
+			<!-- ...Тело страницы -->
+			
+			<!-- Футер... -->
+				<div class="Footer"></div>
+			<!-- ...Футер -->
+			
+		</div>
+		<!-- ...Шапка -->
+	</div>
+	<!-- ...Блок страницы задающий общую, минимальную ширину страницы -->
+
+</body>
+</html>

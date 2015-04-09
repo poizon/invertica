@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Рабочее место владельца контента</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="http://localhost/style.css" />
+
+<body>
+
+	<!-- Блок страницы задающий общую, минимальную ширину страницы... -->
+	<div class="AllBody">
+
+		<!-- Шапка... -->
+		<div class="HeaderBlock">
+		
+			<!-- Логотип... -->
+			<div class="Logo"></div>
+			<!-- ...Логотип -->
+			
+			<!-- Главное меню... -->
+			        <div class="MenuBox">
+					<div class="MnuMyResourcesSel" onclick="document.location='?act=list'"></div>
+					<div class="MnuMarketOff" onclick="document.location='market.html'" onmouseover="this.className='MnuMarketOn'" onmouseout="this.className='MnuMarketOff'"></div>
+					<div class="MnuContactOff" onclick="document.location='#'" onmouseover="this.className='MnuContactOn'" onmouseout="this.className='MnuContactOff'"></div>
+					<div class="MnuStatisticsOff" onclick="document.location='stat.html'" onmouseover="this.className='MnuStatisticsOn'" onmouseout="this.className='MnuStatisticsOff'"></div>
+					<div class="MnuAnalyticsOff" onclick="document.location='#'" onmouseover="this.className='MnuAnalyticsOn'" onmouseout="this.className='MnuAnalyticsOff'"></div>
+					<div class="MnuPersonalareaOff" onclick="document.location='?act=profile'" onmouseover="this.className='MnuPersonalareaOn'" onmouseout="this.className='MnuPersonalareaOff'"></div>
+				</div>
+			<!-- ...Главное меню -->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			<div class="HeadLine"></div>
+			
+			<!-- Меню вотрого уровня... --->
+			<div class="SubMenuOff"><a href="?act=list">Каталог ресурсов</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuSel"><a href="#">Загрузка данных</a></div>
+			<!-- ...Меню вотрого уровня --->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			
+			<!-- Тело страницы... -->
+		
+				<div class="h1">Загрузка данных</div>
+
+				<!-- Рамка... -->
+				<div class="FrameTop"></div>
+				<div class="FrameMid">
+
+					<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+					
+					<div class="FrmColLeft">
+						<div class="h3">Очередь загрузки. Страницы: <TMPL_LOOP NAME="PAGES"> <TMPL_VAR NAME="NUM"> </TMPL_LOOP></div>
+					</div>
+					
+					<div class="FrmColRight">
+						<div style="float: right;">
+							<span class="FrmLabel">Показывать&nbsp;объекты:&nbsp;</span>
+							<form name="form1" method="post">
+							<select style="width: 180px;" name="type" id="type" onchange="document.form1.submit()">
+								<option value="0">Все данные</option>
+								<option value="3">Только картинки</option>
+								<option value="4">Только трейлеры</option>
+								<option value="2">Только субтитры</option>
+								<option value="5">Только видео</option>
+							</select>
+							<input type="hidden" name="act" value="load">
+							<input type="hidden" name="page" value="<TMPL_VAR NAME="PAGE" DEFAULT=1>">
+							</form>
+						</div>
+					</div>
+					
+					<div style="width: 20px; height: 20px; clear: both;"><spacer type="block" width="20" height="20"></div>
+
+					<table width="830" align="center" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<th>Имя файла</th>
+							<th>Тип&nbsp;файла</th>
+							<th style="text-align: right;">Закачено</th>
+							<th>Путь к&nbsp;файлу</th>
+							<th style="text-align: right;">Прогресс</th>
+							<th>Статус</th>
+						</tr>
+						<TMPL_LOOP NAME="files">
+						<tr class="ItemUnsel" onclick="document.location='?act=process&id=<TMPL_VAR NAME="ID">'" onmouseover="this.className='ItemSel'" onmouseout="this.className='ItemUnsel'">
+							<td><TMPL_VAR NAME="FileName"></td>
+							<td style="white-space: nowrap; font-size: 12px;"><TMPL_VAR NAME="FileType"></td>
+							<td style="text-align: right;"><TMPL_VAR NAME="FileSize"></td>
+							<td style="font-size: 12px;"><TMPL_VAR NAME="FullPath"></td>
+							<td style="text-align: right;"><TMPL_VAR NAME="Percent"></td>
+							<td style="font-size: 12px;"><TMPL_VAR NAME="FileStatus"></td>
+						</tr>
+						</TMPL_LOOP>
+					</table>
+					
+					<div class="BtnBox">
+						<div class="BtnAddObjectOff" onclick="document.location='?act=add'" onmouseover="this.className='BtnAddObjectOn'" onmouseout="this.className='BtnAddObjectOff'"></div>
+						<div class="BtnAddObjectOff" onclick="document.location='?act=offline'" onmouseover="this.className='BtnAddObjectOn'" onmouseout="this.className='BtnAddObjectOff'"></div>
+					</div>
+					
+				</div>
+				<div class="FrameBot"></div>
+				<!-- ...Рамка -->
+
+			<!-- ...Тело страницы -->
+			
+			<!-- Футер... -->
+				<div class="Footer"></div>
+			<!-- ...Футер -->
+			
+		</div>
+		<!-- ...Шапка -->
+	</div>
+	<!-- ...Блок страницы задающий общую, минимальную ширину страницы -->
+
+</body>
+</html>

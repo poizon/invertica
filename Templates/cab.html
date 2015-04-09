@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="http://localhost/style.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Рабочее место владельца контента</title>
+	<script type="text/javascript" src="http://localhost/img/js/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="http://localhost/img/js/swfobject.js"></script>
+	<script type="text/javascript" src="http://localhost/img/js/jquery.uploadify.v2.1.0.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$("#uploadify").uploadify({
+			'uploader'       : 'http://localhost/img/js/uploadify.swf',
+			'script'         : 'http://localhost/tv/ajax2.pl',
+			'cancelImg'      : 'http://localhost/img/js/cancel.png',
+			'folder'         : 'img/uploads/<TMPL_VAR NAME="RHID">/0',
+			'queueID'        : 'fileQueue',
+			'auto'           : true,
+			'multi'          : false,
+			'fileExt'        : '*.jpg',
+			'buttonImg'      : 'http://localhost/img/img/btn_loadimage.gif',
+			'rollover'       : true,
+			'width'          : 165,
+			'height'         : 25,
+			'wmode'          : 'transparent',
+			'scriptData'     : {'rhid' : '<TMPL_VAR NAME="RHID">'}
+		});
+	});
+	</script>
+</head>
+
+<body>
+
+	<!-- Блок страницы задающий общую, минимальную ширину страницы... -->
+	<div class="AllBody">
+
+		<!-- Шапка... -->
+		<div class="HeaderBlock">
+		
+			<!-- Логотип... -->
+			<div class="Logo"></div>
+			<!-- ...Логотип -->
+			
+			<!-- Главное меню... -->
+				<div class="MenuBox">
+					<div class="MnuMyResourcesOff" onclick="document.location='?act=list'" onmouseover="this.className='MnuMyResourcesOn'" onmouseout="this.className='MnuMyResourcesOff'"></div>
+					<div class="MnuMarketOff" onclick="document.location='market.html'" onmouseover="this.className='MnuMarketOn'" onmouseout="this.className='MnuMarketOff'"></div>
+					<div class="MnuContactOff" onclick="document.location='#'" onmouseover="this.className='MnuContactOn'" onmouseout="this.className='MnuContactOff'"></div>
+					<div class="MnuStatisticsOff" onclick="document.location='stat.html'" onmouseover="this.className='MnuStatisticsOn'" onmouseout="this.className='MnuStatisticsOff'"></div>
+					<div class="MnuAnalyticsOff" onclick="document.location='#'" onmouseover="this.className='MnuAnalyticsOn'" onmouseout="this.className='MnuAnalyticsOff'"></div>
+					<div class="MnuPersonalareaSel" onclick="document.location='?act=profile'"></div>
+				</div>
+			<!-- ...Главное меню -->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			<div class="HeadLine"></div>
+			
+			<!-- Меню вотрого уровня... --->
+			<div class="SubMenuSel"><a href="?act=profile">Профиль</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuOff"><a href="?act=finance&dtfrom=20090101000000&dtto=20100121000000">Финансы</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuOff"><a href="?act=persons">Сотрудники</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuOff"><a href="#">Журнал</a></div>
+			<!-- ...Меню вотрого уровня --->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			
+			<!-- Тело страницы... -->
+		
+				<div class="h1">Личный кабинет </div>
+
+				<!-- Рамка... -->
+				<div class="FrameTop"></div>
+				<div class="FrameMid">
+
+				<form id="form1" name="form1" method="post">
+
+			
+						<div class="FrmColLeft">
+
+							<div class="FrmLabel">Название компании</div>
+							<table style="border: 0;" cellspacing="0" cellpadding="0">
+								<tr>
+									<td style="border: 0; padding-top: 4px;"><div class="h3">&laquo;<TMPL_VAR NAME="CompanyName">&raquo;</div></td>
+								</tr>
+							</table>
+
+
+							<div class="FrmLabel">Фактический адрес</div>
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td class="FrmInput"><input style="width: 380px;" type="text" name="Adress" id="Adress" value="<TMPL_VAR NAME="Adress">" /></td>
+								</tr>
+							</table>
+
+
+  							<table style="border: 0;" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<div class="FrmLabel">Адрес электронной почты</div>
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+													<td class="FrmInput"><input style="width: 173px;" type="text" name="Email" id="Email" value="<TMPL_VAR NAME="Email">"/></td>
+											</tr>
+										</table>
+									</td>
+									<td>
+										<div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div>
+									</td>
+									<td>
+										<div class="FrmLabel">Интернет сайт</div>
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+													<td class="FrmInput"><input style="width: 173px;" type="text" name="Web" id="Web" value="<TMPL_VAR NAME="Web">"/></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+
+
+  							<table style="border: 0;" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<div class="FrmLabel">Телефон</div>
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+													<td class="FrmInput"><input style="width: 173px;" type="text" name="Tel" id="Tel" value="<TMPL_VAR NAME="Tel">" /></td>
+											</tr>
+										</table>
+									</td>
+									<td>
+										<div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div>
+									</td>
+									<td>
+										<div class="FrmLabel">Факс</div>
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+													<td class="FrmInput"><input style="width: 173px;" type="text" name="Fax" id="Fax" value="<TMPL_VAR NAME="Fax">"/></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+
+
+							<div class="FrmLabel">Описание</div>
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td class="FrmInput"><textarea style="width: 380px; height: 155px; font-size: 14px;" name="Notes" id="Notes"><TMPL_VAR NAME="Notes"></textarea>
+									<input type="hidden" name="form_save" value="1" />
+									<input type="hidden" name="act" value="profile" />
+									</td>
+								</tr>
+							</table>
+
+
+						</div>
+					
+						<div class="FrmColRight">
+
+
+							<table style="border: 0; padding-top: 70px;" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<img style="border: 1px solid #B8B8B8; margin: 15px 15px 0 30px;" src="<TMPL_VAR  NAME="Photo">" width="85" height="110">
+									</td>
+									<td style="vertical-align: bottom; padding: 0 20px 2px 0;">
+										<div id="fileQueue"></div>
+										<input type="file" name="uploadify" id="uploadify" />
+										<!-- <div class="BtnLoadImageOff" onclick="document.location='#'" onmouseover="this.className='BtnLoadImageOn'" onmouseout="this.className='BtnLoadImageOff'"></div> -->
+										<div class="BtnSaveOff" onclick="document.form1.submit()" onmouseover="this.className='BtnSaveOn'" onmouseout="this.className='BtnSaveOff'"></div>
+										
+									</td>
+								</tr>
+							</table>
+
+						</div>
+						
+						<div style="width: 20px; height: 20px; clear: both;"><spacer type="block" width="20" height="20"></div>
+					
+					
+				</form>
+					
+				</div>
+				<div class="FrameBot"></div>
+				<!-- ...Рамка -->
+
+
+			<!-- ...Тело страницы -->
+			
+			<!-- Футер... -->
+				<div class="Footer"></div>
+			<!-- ...Футер -->
+			
+		</div>
+		<!-- ...Шапка -->
+	</div>
+	<!-- ...Блок страницы задающий общую, минимальную ширину страницы -->
+
+</body>
+</html>

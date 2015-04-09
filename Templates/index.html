@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Рабочее место владельца контента</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="http://localhost/style.css" />
+
+<body>
+
+	<!-- Блок страницы задающий общую, минимальную ширину страницы... -->
+	<div class="AllBody">
+
+		<!-- Шапка... -->
+		<div class="HeaderBlock">
+		
+			<!-- Логотип... -->
+			<div class="Logo"></div>
+			<!-- ...Логотип -->
+			
+			<!-- Главное меню... -->
+				<div class="MenuBox">
+					<div class="MnuMyResourcesSel" onclick="document.location='?act=list'"></div>
+					<div class="MnuMarketOff" onclick="document.location='market.html'" onmouseover="this.className='MnuMarketOn'" onmouseout="this.className='MnuMarketOff'"></div>
+					<div class="MnuContactOff" onclick="document.location='#'" onmouseover="this.className='MnuContactOn'" onmouseout="this.className='MnuContactOff'"></div>
+					<div class="MnuStatisticsOff" onclick="document.location='stat.html'" onmouseover="this.className='MnuStatisticsOn'" onmouseout="this.className='MnuStatisticsOff'"></div>
+					<div class="MnuAnalyticsOff" onclick="document.location='#'" onmouseover="this.className='MnuAnalyticsOn'" onmouseout="this.className='MnuAnalyticsOff'"></div>
+					<div class="MnuPersonalareaOff" onclick="document.location='?act=profile'" onmouseover="this.className='MnuPersonalareaOn'" onmouseout="this.className='MnuPersonalareaOff'"></div>
+				</div>
+			<!-- ...Главное меню -->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			<div class="HeadLine"></div>
+			
+			<!-- Меню вотрого уровня... --->
+			<div class="SubMenuSel"><a href="?act=list">Каталог ресурсов</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuOff"><a href="?act=load">Загрузка данных</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuOff"><a href="?act=logout">Выход</a></div>
+			<!-- ...Меню вотрого уровня --->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			
+			<!-- Тело страницы... -->
+				<div class="h1">Список медиа объектов. Страницы: <TMPL_LOOP NAME="PAGES"> <TMPL_VAR NAME="NUM"> </TMPL_LOOP></div>
+				
+				<!-- Рамка... -->
+				<div class="FrameTop"></div>
+				<div class="FrameMid">
+					<table width="830" align="center" border="0" cellspacing="0" cellpadding="0">
+						
+						<tr>
+							<th>Обложка</th>
+							<th><a href="?act=list&sort=name&order=<TMPL_VAR NAME="order">&page=<TMPL_VAR NAME="CUR_NUM" DEFAULT=1>" target="_self">Название</a></th>
+							<th>Количество<br>просмотров</th>
+							<th>Продолжительность</th>
+							<th>Форматы</th>
+							<th>Категории</th>
+							<th>Дата<br>обновления</th>
+						</tr>
+						<TMPL_LOOP NAME = "films">
+						<tr class="ItemUnsel" onclick="document.location='?act=detail&id=<TMPL_VAR NAME="id">'" onmouseover="this.className='ItemSel'" onmouseout="this.className='ItemUnsel'">
+							<td><img src="<TMPL_VAR NAME="img">" width="53" height="74"></td>
+							<td><TMPL_VAR NAME="name"></td>
+							<td><TMPL_VAR NAME="views"></td>
+							<td><TMPL_VAR NAME="duration"></td>
+							<td><TMPL_VAR NAME="formats"></td>
+							<td><TMPL_VAR NAME="genre"></td>
+							<td><TMPL_VAR NAME="date_update"></td>
+						</tr>
+						</TMPL_LOOP>
+					
+					</table>
+					
+					<div class="BtnBox">
+						<div class="BtnAddObjectOff" onclick="document.location='?act=add_m'" onmouseover="this.className='BtnAddObjectOn'" onmouseout="this.className='BtnAddObjectOff'"></div>
+						<div class="BtnImportOff" onclick="document.location='#'" onmouseover="this.className='BtnImportOn'" onmouseout="this.className='BtnImportOff'"></div>
+					</div>
+					
+				</div>
+				<div class="FrameBot"></div>
+				<!-- ...Рамка -->
+				
+			<!-- ...Тело страницы -->
+			
+			<!-- Футер... -->
+				<div class="Footer"></div>
+			<!-- ...Футер -->
+			
+		</div>
+		<!-- ...Шапка -->
+	</div>
+	<!-- ...Блок страницы задающий общую, минимальную ширину страницы -->
+
+</body>
+</html>

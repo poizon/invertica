@@ -1,0 +1,270 @@
+#Users 
+#UserTags
+#UserFilmComments
+#UserPlayLists
+#UserRecommendations
+#UserFilmRatings
+#UserGroups
+#UserGroupsDesc
+#UserSTBs
+#UserProfiles
+
+#OwnerProposals
+
+#Profiles
+#Offers
+#MetaFiles
+#MetaFileLoads
+#MediaObjects
+#Crew
+
+
+
+CREATE TABLE Users 
+( 
+  'UserId' INT UNSIGNED NOT NULL 
+, 'UserName' VARCHAR(255) NOT NULL 
+, 'DateCreated' DATETIME NOT NULL 
+, 'DateChanged' TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP 
+, CONSTRAINT PRIMARY KEY ( 'UserId' ) ) 
+COMMENT = 'Пользователи';
+
+CREATE TABLE UserTags 
+( 
+  'TagId' INT UNSIGNED NOT NULL 
+, 'TagName' VARCHAR(255) NOT NULL 
+, 'UserId' INT UNSIGNED NULL 
+, 'DateCreated' DATETIME NOT NULL 
+, 'DateChanged' TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP 
+, CONSTRAINT PRIMARY KEY ( 'TagId' ) );
+
+CREATE TABLE UserSTBs 
+( 
+  'STBId' INT UNSIGNED NOT NULL 
+, 'STBName' VARCHAR(255) NOT NULL 
+, 'UserId' INT UNSIGNED NULL 
+, 'STBMacAddress' VARCHAR(255) NULL 
+, 'DateCreated' DATETIME NOT NULL 
+, 'DateChanged' TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP 
+, CONSTRAINT PRIMARY KEY ( 'STBId' ) );
+
+CREATE TABLE UserProfiles 
+( 
+  'ProfileId' INT UNSIGNED NOT NULL 
+, 'ProfileName' VARCHAR(255) NOT NULL 
+, 'UserId' INT UNSIGNED NULL 
+, 'DateCreated' DATETIME NOT NULL 
+, 'DateChanged' TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP 
+, CONSTRAINT PRIMARY KEY ( 'ProfileId' ) );
+
+CREATE TABLE UserPlayLists 
+( 
+  'PlayListId' INT UNSIGNED NOT NULL 
+, 'PLayListName' VARCHAR(255) NOT NULL 
+, 'UserId' INT UNSIGNED NOT NULL 
+, 'DateCreated' DATETIME NOT NULL 
+, 'DateChanged' TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP 
+, CONSTRAINT PRIMARY KEY ( 'PlayListId' ) );
+
+CREATE TABLE UserPlayListFilms 
+( 
+  'PlayListFilmId' INT UNSIGNED NOT NULL 
+, 'PlayListId' INT UNSIGNED NOT NULL 
+, 'PLayListFilmName' VARCHAR(255) NOT NULL 
+, 'DateCreated' DATETIME NOT NULL 
+, 'DateChanged' TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP 
+, CONSTRAINT PRIMARY KEY ( 'PlayListFilmId' ) );
+
+CREATE TABLE UserFilmRatings 
+( 
+  'RatingtId' INT UNSIGNED NOT NULL 
+, 'RatingName' VARCHAR(255) NULL 
+, 'UserId' INT UNSIGNED NOT NULL 
+, 'FilmName' VARCHAR(255) NULL 
+, 'DateCreated' DATETIME NOT NULL 
+, 'DateChanged' TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP 
+, CONSTRAINT PRIMARY KEY ( 'RatingtId' ) );
+
+CREATE TABLE UserFilmComments 
+( 
+  'CommentId' INT UNSIGNED NOT NULL 
+, 'CommentName' VARCHAR(255) NULL 
+, 'UserId' INT UNSIGNED NOT NULL 
+, 'FilmName' VARCHAR(255) NULL 
+, 'DateCreated' DATETIME NOT NULL 
+, 'DateChanged' TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP 
+, CONSTRAINT PRIMARY KEY ( 'CommentId' ) );
+
+CREATE TABLE Owners 
+( 
+  'OwnerId' INT UNSIGNED NOT NULL COMMENT 'Правообладатели' 
+, 'OwnerName' VARCHAR(255) NOT NULL 
+, 'DateCreated' DATETIME NOT NULL 
+, 'DateChanged' TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP 
+, CONSTRAINT PRIMARY KEY ( 'OwnerId' ) ) 
+COMMENT = 'Правообладатели';
+
+CREATE TABLE Operators 
+( 
+  'OperatorId' INT UNSIGNED NOT NULL 
+, 'OperatorName' VARCHAR(255) NOT NULL 
+, 'DateCreated' DATETIME NOT NULL 
+, 'DateChanged' TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP 
+, CONSTRAINT PRIMARY KEY ( 'OperatorId' ) ) 
+COMMENT = 'Витрины';
+
+ALTER TABLE UserTags ADD CONSTRAINT 'UserTags_Users_FK1' FOREIGN KEY (
+'UserId' )
+ REFERENCES 'Users' ( 'UserId' )
+ ON DELETE RESTRICT;
+
+ALTER TABLE UserSTBs ADD CONSTRAINT 'UserSTBs_Users_FK1' FOREIGN KEY (
+'UserId' )
+ REFERENCES 'Users' ( 'UserId' )
+ ON DELETE RESTRICT;
+
+ALTER TABLE UserProfiles ADD CONSTRAINT 'UserProfiles_Users_FK1' FOREIGN KEY
+( 'UserId' )
+ REFERENCES 'Users' ( 'UserId' )
+ ON DELETE RESTRICT;
+
+ALTER TABLE UserPlayLists ADD CONSTRAINT 'UserPlayLists_UserPlayLists_FK1'
+FOREIGN KEY ( 'UserId' )
+ REFERENCES 'Users' ( 'UserId' )
+ ON DELETE RESTRICT;
+
+ALTER TABLE UserPlayListFilms ADD CONSTRAINT
+'UserPlayListFilms_UserPlayListFilms_FK1' FOREIGN KEY ( 'PlayListFilmId' )
+ REFERENCES 'UserPlayLists' ( 'PlayListId' )
+ ON DELETE RESTRICT;
+
+ALTER TABLE UserFilmRatings ADD CONSTRAINT 'UserFilmRatings_Users_FK1'
+FOREIGN KEY ( 'UserId' )
+ REFERENCES 'Users' ( 'UserId' )
+ ON DELETE RESTRICT;
+
+ALTER TABLE UserFilmComments ADD CONSTRAINT 'UserFilmComments_Users_FK1'
+FOREIGN KEY ( 'UserId' )
+ REFERENCES 'Users' ( 'UserId' )
+ ON DELETE RESTRICT;
+
+
+CREATE TABLE IF NOT EXISTS `Profiles` (
+  `ID` int(11) NOT NULL COMMENT 'ID',
+  `Name` varchar(256) NOT NULL COMMENT 'Имя',
+  `Address` varchar(512) NOT NULL COMMENT 'Адрес',
+  `Email` varchar(256) NOT NULL COMMENT 'Мыло',
+  `Phones` varchar(256) NOT NULL COMMENT 'Телефон',
+  `Fax` varchar(256) NOT NULL COMMENT 'Fax',
+  `Web` varchar(256) NOT NULL COMMENT 'Web',
+  `Description` varchar(512) NOT NULL COMMENT 'Description',
+  `Photo_ID` bigint(20) unsigned NOT NULL COMMENT 'ID фотографии
+(метафаайла?)',
+  `DateCreated` datetime NOT NULL COMMENT 'Дата создания',
+  `DateChanged` timestamp NOT NULL default CURRENT_TIMESTAMP COMMENT 'Дата
+изменения'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE IF NOT EXISTS `Offers` (
+  `ID` int(11) NOT NULL COMMENT 'ID',
+  `OfferOwner` varchar(256) NOT NULL COMMENT 'ID правообладателя сделавшего
+это предложение',
+  `OfferName` varchar(256) NOT NULL COMMENT 'Имя предложения',
+  `OfferType` varchar(256) NOT NULL COMMENT 'Тип предложения: Дистрибуция,
+etc',
+  `OfferPeriod` varchar(256) NOT NULL COMMENT 'Период действия предложения',
+  `ContractTiming` varchar(256) NOT NULL COMMENT 'Срок контракта',
+  `OfferRestriction` varchar(256) NOT NULL COMMENT '13, 16, Male, 2000, All -
+Регион, Возраст, Пол, Доход, Устройства доступа',
+  `MediaObjectIDs` varchar(1024) NOT NULL COMMENT 'перечень ID медиаобъектов
+включенных в это предложение',
+  `OfferPrice` varchar(256) NOT NULL COMMENT 'Цена',
+  `OfferMinPrice` varchar(256) NOT NULL COMMENT 'Цена MIN',
+  `OfferMaxPrice` varchar(256) NOT NULL COMMENT 'Цена MAX',
+  `OfferComments` varchar(512) NOT NULL COMMENT 'Комментарии',
+  `OfferRegions` varchar(512) NOT NULL COMMENT 'Список регионов',
+  `OfferAge` varchar(64) NOT NULL COMMENT 'Возраст',
+  `OfferRevenue` varchar(64) NOT NULL COMMENT 'Доход',
+  `OfferSex` varchar(64) NOT NULL COMMENT 'Пол',
+  `DateCreated` datetime NOT NULL COMMENT 'Дата создания',
+  `DateChanged` timestamp NOT NULL default CURRENT_TIMESTAMP COMMENT 'Дата
+изменения'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE IF NOT EXISTS `MetaFiles` (
+  `ID` int(11) unsigned NOT NULL COMMENT 'ID объекта ',
+  `FileName` varchar(256) NOT NULL COMMENT 'Имя файла',
+  `FileType` varchar(50) NOT NULL COMMENT 'Тип файла',
+  `FileSize` bigint(50) unsigned NOT NULL COMMENT 'Размер файла',
+  `FileStatus` varchar(256) NOT NULL COMMENT 'Статус файла: Хранение, Идет
+загрузка, Загрузка с ошибкой',
+  `FileVideoFormat` varchar(256) default NULL COMMENT 'формат видео, NULL если
+не видео',
+  `FileVideoContainer` varchar(256) default NULL COMMENT 'Контейнер (NULL если
+не видео)',
+  `FileVideoBitrate` varchar(256) default NULL COMMENT 'Битрейт (NULL если не
+видео)',
+  `FileVideoResolution` varchar(265) default NULL COMMENT 'Рзерешение (NULL
+если не видео)',
+  `FileVideoHD` int(1) default NULL COMMENT 'Флаг HD (NULL если не видео)',
+  `FileAudioChannels` varchar(256) default NULL COMMENT 'Звуковые дорожки
+(NULL если не видео)',
+  `FileAudioFormat` varchar(256) default NULL COMMENT 'Формат аудио (NULL если
+не видео)',
+  `FileAudioBitrate` varchar(256) default NULL COMMENT 'Битрейт аудио (NULL
+если не видео)',
+  `DateCreated` datetime NOT NULL,
+  `DateChanged` timestamp NOT NULL default CURRENT_TIMESTAMP,
+  UNIQUE KEY `ID` (`ID`),
+  UNIQUE KEY `ID_2` (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE IF NOT EXISTS `MetaFileLoads` (
+  `ID` int(10) unsigned NOT NULL COMMENT 'ID ',
+  `Name` varchar(256) NOT NULL COMMENT 'Имя в система',
+  `FileName` varchar(256) NOT NULL COMMENT 'Имя файла',
+  `FileType` varchar(256) NOT NULL COMMENT 'Тип файла',
+  `FileSize` bigint(20) unsigned NOT NULL COMMENT 'Размер файла',
+  `FileRemoteSource` varchar(512) NOT NULL COMMENT 'Путь (с протоклом) до
+удаленного источника',
+  `FileLoadProgress` varchar(256) NOT NULL COMMENT 'Для загруженности файла',
+  `FileStatus` varchar(256) NOT NULL COMMENT 'Статус загрузки файла',
+  UNIQUE KEY `ID` (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE IF NOT EXISTS `MediaObjects` (
+  `ID` int(11) unsigned NOT NULL,
+  `Name` varchar(256) NOT NULL,
+  `NameOriginal` varchar(256) NOT NULL,
+  `Author` varchar(256) NOT NULL,
+  `CreationDate` varchar(256) NOT NULL,
+  `Country` varchar(256) NOT NULL,
+  `LanguageOriginal` varchar(256) NOT NULL,
+  `MetafileIDs` varchar(512) NOT NULL,
+  `DateCreated` datetime NOT NULL,
+  `DateChanged` timestamp NOT NULL default CURRENT_TIMESTAMP,
+  UNIQUE KEY `ID` (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE IF NOT EXISTS `Crew` (
+  `ID` int(10) unsigned NOT NULL COMMENT 'ID',
+  `Name` varchar(256) NOT NULL COMMENT 'Имя',
+  `Password` varchar(256) NOT NULL COMMENT 'Пароль',
+  `Rights` varchar(256) NOT NULL COMMENT 'Права',
+  `Email` varchar(256) NOT NULL COMMENT 'Email',
+  `CreationDate` datetime NOT NULL COMMENT 'Дата создания',
+  `ChangeDate` timestamp NOT NULL default CURRENT_TIMESTAMP COMMENT 'Дата
+изменения',
+  `1` int(11) NOT NULL,
+  `2` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+

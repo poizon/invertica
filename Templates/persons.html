@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="http://localhost/style.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Рабочее место владельца контента</title>
+	<TMPL_IF NAME="NO_READ">
+	<script>
+	alert('Нет прав на просмотр!');
+	</script>
+	</TMPL_IF>
+</head>
+
+<body>
+
+	<!-- Блок страницы задающий общую, минимальную ширину страницы... -->
+	<div class="AllBody">
+
+		<!-- Шапка... -->
+		<div class="HeaderBlock">
+		
+			<!-- Логотип... -->
+			<div class="Logo"></div>
+			<!-- ...Логотип -->
+			
+			<!-- Главное меню... -->
+				<div class="MenuBox">
+					<div class="MnuMyResourcesSel" onclick="document.location='?act=list'"></div>
+					<div class="MnuMarketOff" onclick="document.location='market.html'" onmouseover="this.className='MnuMarketOn'" onmouseout="this.className='MnuMarketOff'"></div>
+					<div class="MnuContactOff" onclick="document.location='#'" onmouseover="this.className='MnuContactOn'" onmouseout="this.className='MnuContactOff'"></div>
+					<div class="MnuStatisticsOff" onclick="document.location='stat.html'" onmouseover="this.className='MnuStatisticsOn'" onmouseout="this.className='MnuStatisticsOff'"></div>
+					<div class="MnuAnalyticsOff" onclick="document.location='#'" onmouseover="this.className='MnuAnalyticsOn'" onmouseout="this.className='MnuAnalyticsOff'"></div>
+					<div class="MnuPersonalareaOff" onclick="document.location='?act=profile'" onmouseover="this.className='MnuPersonalareaOn'" onmouseout="this.className='MnuPersonalareaOff'"></div>
+				</div>
+			<!-- ...Главное меню -->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			<div class="HeadLine"></div>
+			
+			<!-- Меню вотрого уровня... --->
+			<div class="SubMenuOff"><a href="?act=profile">Профиль</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuOff"><a href="?act=finance">Финансы</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuSel"><a href="?act=persons">Сотрудники</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuOff"><a href="#">Журнал</a></div>
+			<!-- ...Меню вотрого уровня --->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			
+			<!-- Тело страницы... -->
+		
+				<div class="h1">Сотрудники</div>
+
+				<!-- Рамка... -->
+				<div class="FrameTop"></div>
+				<div class="FrameMid">
+
+				<form id="form1" name="form1" method="post">
+
+			
+						<div class="FrmColLeft">
+
+
+
+							<table style="border: 0;" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<div class="FrmLabel">Выбор сотрудника</div>
+										<select style="width: 185px;" name="LoadName" id="LoadName" onchange="document.form1.submit()">
+											<TMPL_LOOP NAME="PeopleList">
+											<option value="<TMPL_VAR NAME="IdList">" <TMPL_VAR NAME="Selected">><TMPL_VAR NAME="NameList"></option>
+											</TMPL_LOOP>
+										</select>
+									</td>
+									<td>
+										<div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div>
+									</td>
+									<td>
+						<div class="BtnBox" style="padding-top: 32px;">
+							<input style="width: 185px;" type="text" name="Name" id="Name" class="FrmInput" />
+							<div class="BtnAddOff" onclick="document.form1.submit()" onmouseover="this.className='BtnAddOn'" onmouseout="this.className='BtnAddOff'"></div>
+						</div>
+
+									</td>
+								</tr>
+							</table>
+
+
+							<div class="h3"><TMPL_VAR NAME="Name"></div>
+							<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+							
+								<table class="FrmTabs" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<th>Акаунт создан:</th>
+										<td><TMPL_VAR NAME="DateCreated"></td>
+									</tr>
+									<tr>
+										<th>Последнее посещение:</th>
+										<td><TMPL_VAR NAME="LastVisited"></td>
+									</tr>
+								</table>
+								
+								<div style="width: 20px; height: 20px; clear: both;"><spacer type="block" width="20" height="20"></div>
+
+							<div class="FrmLabel">Адрес электронной почты</div>
+								<table border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td class="FrmInput"><input style="width: 380px;" type="text" name="Email" id="Email" value="<TMPL_VAR NAME="Email">" /></td>
+									</tr>
+								</table>
+
+
+						</div>
+					
+						<div class="FrmColRight">
+						<div style="width: 10px; height: 6px; clear: both;"><spacer type="block" width="10" height="6"></div>
+						
+							<fieldset>
+								<table class="FrmInputTab" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<th><div class="h4" style="margin-left: -15px;">Права доступа</div></th>
+										<th>Только<br>чтение</th>
+										<th>Добавление<br>и&nbsp;изменение</th>
+									</tr>
+									<tr>
+										<th>Управление ресурсами:</th>
+										<td style="padding-left: 15px;"><input type="checkbox" name="rres" id="checkbox" <TMPL_VAR NAME="RRES"> /></td>
+										<td style="padding-left: 15px;"><input type="checkbox" name="rwres" id="checkbox" <TMPL_VAR NAME="RWRES"> /></td>
+									</tr>
+									<tr>
+										<th>Биржа:</th>
+										<td style="padding-left: 15px;"><input type="checkbox" name="rbir" id="checkbox" <TMPL_VAR NAME="RBIR"> /></td>
+										<td style="padding-left: 15px;"><input type="checkbox" name="rwbir" id="checkbox" <TMPL_VAR NAME="RWBIR"> /></td>
+									</tr>
+									<tr>
+										<th>Статистика:</th>
+										<td style="padding-left: 15px;"><input type="checkbox" name="rstat" id="checkbox" <TMPL_VAR NAME="RSTAT"> /></td>
+										<td style="padding-left: 15px;">&nbsp;</td>
+									</tr>
+									<tr>
+										<th>Личный кабинет:</th>
+										<td style="padding-left: 15px;"><input type="checkbox" name="rprof" id="checkbox" <TMPL_VAR NAME="RPROF"> /></td>
+										<td style="padding-left: 15px;"><input type="checkbox" name="rwprof" id="checkbox" <TMPL_VAR NAME="RWPROF">/></td>
+									</tr>
+								</table>							
+								<div style="width: 20px; height: 20px; clear: both;"><spacer type="block" width="20" height="20"></div>
+							</fieldset>
+
+  								<table style="border: 0;" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td>
+											<div class="FrmLabel">Логин</div>
+											<table border="0" cellspacing="0" cellpadding="0">
+												<tr>
+													<td class="FrmInput"><input style="width: 173px;" type="text" name="Login" id="Login" value="<TMPL_VAR NAME="Login">" /></td>
+												</tr>
+											</table>
+										</td>
+										<td>
+											<div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div>
+										</td>
+										<td>
+											<div class="FrmLabel">Пароль</div>
+											<table border="0" cellspacing="0" cellpadding="0">
+												<tr>
+													<td class="FrmInput"><input style="width: 173px;" type="password" name="Passwd" id="Passwd" value="<TMPL_VAR NAME="Passwd">" /></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+
+						</div>
+						
+						<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+					
+						<div class="BtnBox">
+							<input type="hidden" name="act" value="persons">
+							<input type="hidden" name="uid" value="<TMPL_VAR NAME="UID">">	
+							<div class="BtnSaveOff" onclick="document.form1.submit()" onmouseover="this.className='BtnSaveOn'" onmouseout="this.className='BtnSaveOff'"></div>
+							<div class="BtnDeleteOff" onclick="document.location='?act=persons&flag=delete&uid=<TMPL_VAR NAME="UID">'" onmouseover="this.className='BtnDeleteOn'" onmouseout="this.className='BtnDeleteOff'"></div>
+						</div>
+					
+					
+				</form>
+					
+				</div>
+				<div class="FrameBot"></div>
+				<!-- ...Рамка -->
+
+
+			<!-- ...Тело страницы -->
+			
+			<!-- Футер... -->
+				<div class="Footer"></div>
+			<!-- ...Футер -->
+			
+		</div>
+		<!-- ...Шапка -->
+	</div>
+	<!-- ...Блок страницы задающий общую, минимальную ширину страницы -->
+
+</body>
+</html>

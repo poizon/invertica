@@ -1,0 +1,106 @@
+#!/usr/bin/perl -w
+# Spreadsheel::WriteExcel tests
+
+#use Encoding;
+use Spreadsheet::WriteExcel;
+use utf8;
+use lib qw(.);
+use CGI;
+use BES::LB;
+use YAML qw(LoadFile); 
+
+my $q = new CGI;
+my $user_id = $q->param('user_id');
+my $dtfrom = $q->param('dtfrom');
+my $dtto = $q->param('dtto');
+
+
+my $config = LoadFile("config.yml");
+my $lb = BES::LB->new($config);
+my %in     = undef;
+$in{user_id} = "5500000003";
+$in{dtfrom} = $dtfrom;
+$in{dtto} = $dtto;
+
+# получаем платежи
+my @pay = $lb->getPayments(\%in);    
+
+print "Content-Type: application/vnd.ms-excel\n\n";
+#print "Content-Transfer-Encoding: binary\n\n";
+
+
+my $workbook = Spreadsheet::WriteExcel->new('-');
+my $worksheet = $workbook->add_worksheet("Зачисления");
+my $worksheet2 = $workbook->add_worksheet("Списания");
+
+my $textfmt = $workbook->add_format();#font => 'Arial',size => 12);
+$textfmt->set_align('center');
+$textfmt->set_align('vcenter'); 
+my $headfmt = $workbook->add_format();
+$headfmt->set_bold();
+$headfmt->set_align('center');
+$headfmt->set_align('vcenter');
+$headfmt->set_text_wrap();
+$headfmt->set_border();
+$headfmt->set_bottom(6);
+my $mygray = $workbook->set_custom_color(40, '#AAAAAA');
+$headfmt->set_bg_color($mygray);
+
+# Формат остальных ячеек
+#my $tabfmt = $workbook->add_format(num_format => '0.00', order => 1);
+$worksheet->set_column('A:A', 20);
+$worksheet->set_column('B:B', 20);
+$worksheet->set_column('C:C', 20);
+$worksheet->set_column('D:D', 60);
+
+$worksheet2->set_column('A:A', 20); 
+$worksheet2->set_column('B:B', 20);
+$worksheet2->set_column('C:C', 20);
+$worksheet2->set_column('D:D', 60);
+
+# печать шапки
+$worksheet->write(0,0, "Дата", $headfmt);
+$worksheet->write(0,1, "Операция", $headfmt);
+$worksheet->write(0,2, "Сумма", $headfmt);
+$worksheet->write(0,3, "Описание", $headfmt);
+
+# получаем платежи
+my $rows=1;
+for (my $index = 0; $index < @pay; $index = $index + 1) {
+    utf8::decode($pay[$index]{cur});
+    utf8::decode($pay[$index]{comments});
+    $worksheet->write($rows,0, $pay[$index]{date}, $textfmt);
+    $worksheet->write($rows,1, "Зачисление", $textfmt);
+    $worksheet->write($rows,2, $pay[$index]{amount}." ".$pay[$index]{cur}, $textfmt);
+    $worksheet->write($rows,3, $pay[$index]{comments}, $textfmt);
+    $rows++;
+}
+
+# печать шапки
+$worksheet2->write(0,0, "Дата", $headfmt);
+$worksheet2->write(0,1, "Операция", $headfmt);
+$worksheet2->write(0,2, "Сумма", $headfmt);
+$worksheet2->write(0,3, "Описание", $headfmt);
+$rows = 1;
+# получаем расходы 
+my @spend = $lb->getStats(\%in); 
+for (my $index = 0; $index < @spend; $index = $index + 1) { 
+    utf8::decode($spend[$index]{cur});
+    utf8::decode($spend[$index]{comments});
+    $worksheet2->write($rows,0, $spend[$index]{date}, $textfmt);
+    $worksheet2->write($rows,1, "Списание", $textfmt);
+    $worksheet2->write($rows,2, $spend[$index]{amount}." ".$spend[$index]{cur}, $textfmt);
+    $worksheet2->write($rows,3, $spend[$index]{comments}, $textfmt);
+    $rows++;
+}
+
+
+# печать данных
+#$worksheet->write(1,0, $array, $textfmt);
+
+    
+#my $text = "Проверка";
+#$worksheet->write(0, 0, "Русский текст", $tabformat);
+#$worksheet->write(3, 1, decode("koi8-r","Русский текст с рамкой"), $tabformat);
+#$worksheet->write("f3", $text);
+

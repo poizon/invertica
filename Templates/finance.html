@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="http://193.164.132.203/v/style.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Рабочее место владельца контента</title>
+
+</head>
+
+<body>
+
+	<!-- Блок страницы задающий общую, минимальную ширину страницы... -->
+	<div class="AllBody">
+
+		<!-- Шапка... -->
+		<div class="HeaderBlock">
+		
+			<!-- Логотип... -->
+			<div class="Logo"></div>
+			<!-- ...Логотип -->
+			
+			<!-- Главное меню... -->
+				<div class="MenuBox">
+					<div class="MnuMyResourcesOff" onclick="document.location='?act=list'" onmouseover="this.className='MnuMyResourcesOn'" onmouseout="this.className='MnuMyResourcesOff'"></div>
+					<div class="MnuMarketOff" onclick="document.location='market.html'" onmouseover="this.className='MnuMarketOn'" onmouseout="this.className='MnuMarketOff'"></div>
+					<div class="MnuContactOff" onclick="document.location='#'" onmouseover="this.className='MnuContactOn'" onmouseout="this.className='MnuContactOff'"></div>
+					<div class="MnuStatisticsOff" onclick="document.location='stat.html'" onmouseover="this.className='MnuStatisticsOn'" onmouseout="this.className='MnuStatisticsOff'"></div>
+					<div class="MnuAnalyticsOff" onclick="document.location='#'" onmouseover="this.className='MnuAnalyticsOn'" onmouseout="this.className='MnuAnalyticsOff'"></div>
+					<div class="MnuPersonalareaSel" onclick="document.location='?act=profile'"></div>
+				</div>
+			<!-- ...Главное меню -->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			<div class="HeadLine"></div>
+			
+			<!-- Меню вотрого уровня... --->
+			<div class="SubMenuOff"><a href="?act=profile">Профиль</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuSel"><a href="?act=finance&dtfrom=20090101000000&dtto=20100121000000">Финансы</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuOff"><a href="persons.html">Сотрудники</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuOff"><a href="#">Журнал</a></div>
+			<!-- ...Меню вотрого уровня --->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			
+			<!-- Тело страницы... -->
+		
+				<div class="h1">Финансы</div>
+
+				<!-- Рамка... -->
+				<div class="FrameTop"></div>
+				<div class="FrameMid">
+
+				<form id="form1" name="form1" method="post" action="">
+
+			
+						<div class="FrmColLeft">
+
+
+							<table class="FrmTabs" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<th>Состояние счета:</th>
+									<td><div class="h3"><TMPL_VAR NAME="Balance"><span style="font-size: 13px; font-weight: normal; padding-left: 2px;"> <TMPL_VAR NAME="CurSymbol"></span></div></td>
+								</tr>
+							</table>
+
+						</div>
+					
+						<div class="FrmColRight">
+
+
+						</div>
+						
+						<div style="width: 15px; height: 15px; clear: both;"><spacer type="block" width="15" height="15"></div>
+					
+
+				</form>
+
+				</div>
+				<div class="FrameBot"></div>
+				<!-- ...Рамка -->
+
+				<div class="BtnBox">
+					<div class="BtnPrintFinDocsOff" onclick="document.location='#'" onmouseover="this.className='BtnPrintFinDocsOn'" onmouseout="this.className='BtnPrintFinDocsOff'"></div>
+					<div class="BtnPaySystemOff" style="float: right;" onclick="document.location='#'" onmouseover="this.className='BtnPaySystemOn'" onmouseout="this.className='BtnPaySystemOff'"></div>
+				</div>
+
+				<!-- Рамка... -->
+				<div class="FrameTop"></div>
+				<div class="FrameMid">
+
+					<table width="830" align="center" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<th>Дата</th>
+							<th>Операция</th>
+							<th style="text-align: right;">Сумма</th>
+							<th>Описание</th>
+						</tr>
+						<TMPL_LOOP NAME="payments">
+                                                <tr class="ItemUnsel">
+                                                        <td style="font-size: 12px;"><TMPL_VAR NAME="date"></td>
+                                                        <td style="font-size: 12px;"><TMPL_VAR NAME="oper"></td>
+                                                        <td style="text-align: right; white-space: nowrap;"><TMPL_VAR NAME="amount"> <TMPL_VAR NAME="cur"></td>
+                                                        <td style="font-size: 12px; "><TMPL_VAR NAME="comments"></td>                 
+                                                </tr>
+						</TMPL_LOOP>
+					</table>
+					
+					<div class="BtnBox">
+						<div class="BtnExportExcellOff" onclick="document.location='report?dtfrom=<TMPL_VAR NAME="dtfrom">&dtto=<TMPL_VAR NAME="dtto">'" onmouseover="this.className='BtnExportExcellOn'" onmouseout="this.className='BtnExportExcellOff'"></div>
+					</div>
+					
+				</div>
+				<div class="FrameBot"></div>
+				<!-- ...Рамка -->
+
+			<!-- ...Тело страницы -->
+			
+			<!-- Футер... -->
+				<div class="Footer"></div>
+			<!-- ...Футер -->
+			
+		</div>
+		<!-- ...Шапка -->
+	</div>
+	<!-- ...Блок страницы задающий общую, минимальную ширину страницы -->
+
+</body>
+</html>

@@ -1,0 +1,1187 @@
+ 
+/* Интерфейс для правообладателей */
+
+/* @group General */
+/* Общие параметры */
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: Arial, Myriad Pro, Sans-Serif;
+	font-size: 15px;
+	color: #373737;
+	background-color: #E5E5E5;
+	text-shadow: 0px 1px 0px #FFF;
+	}
+
+p { border: 0;
+	padding: 0;
+	margin: 0;
+	padding-bottom: 20px;
+	}
+
+.h1 {
+	font-size: 25px;
+	color: #373737;
+	padding: 50px 20px 15px 20px;
+	letter-spacing: -1px;
+	text-shadow: 0px 1px 0px #FFF;
+	}
+
+.h1 a {
+	font-size: 25px;
+	color: #373737;
+	letter-spacing: -1px;
+	text-decoration: none;
+	border-bottom: 1px solid #CCC;
+	}
+
+.h1 a:hover {
+	color: #007AB4;
+	text-decoration: none;
+	border-bottom: 1px solid #B5CCDA;
+	}
+
+.h2 {
+	font-size: 20px;
+	line-height: 18px;
+	color: #373737;
+	padding: 30px 20px 0 0;
+	text-shadow: 0px 1px 0px #FFF;
+	}
+
+.h3 {
+	font-size: 18px;
+	color: #373737;
+	padding: 0;
+	text-shadow: 0px 1px 0px #FFF;
+	}
+
+.h4 {
+	font-size: 16px;
+	color: #373737;
+	padding: 15px 15px 10px 15px;
+	text-shadow: 0px 1px 0px #FFF;
+	}
+/* @end */
+
+
+
+/* @group Layouts */
+.AllBody {
+	width: 960px;
+	margin:  auto;
+	}
+/* @end */
+
+
+
+/* @group Header */
+/* Блок страницы задающий общую, минимальную ширину страницы */
+.HeaderBlock {
+	width: 960px;
+	height: 128px;
+	}
+
+/* Логотип */
+.Logo {
+	float: right;
+	margin-top: 33px;
+	width: 180px;
+	height: 37px;
+	background: url('http://localhost/img/img/logo.png');
+	background: expression('none');
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost/img/img/logo.png', sizingMethod='crop');
+	}
+
+/* Главное меню */
+.MenuBox {
+	float: left;
+	margin-top: 42px;
+	width: 750px;
+	height: 34px;
+	}
+
+.MnuMyResourcesOn, .MnuMyResourcesOff, .MnuMyResourcesSel,
+.MnuMarketOn, .MnuMarketOff, .MnuMarketSel,
+.MnuContactOn, .MnuContactOff, .MnuContactSel,
+.MnuStatisticsOn, .MnuStatisticsOff, .MnuStatisticsSel,
+.MnuAnalyticsOn, .MnuAnalyticsOff, .MnuAnalyticsSel,
+.MnuPersonalareaOn, .MnuPersonalareaOff,  .MnuPersonalareaSel {
+	height: 34px;
+	float: left;
+	cursor: pointer;
+	}
+
+.MnuMyResourcesOff {
+	width: 129px;
+	 background: url('http://localhost/img/img/mnu_myresources.gif') top no-repeat;
+	}
+
+.MnuMyResourcesOn {
+	width: 129px;
+	 background: url('http://localhost/img/img/mnu_myresources.gif') bottom no-repeat;
+	}
+
+.MnuMyResourcesSel {
+	width: 151px;
+	 background: url('http://localhost/img/img/mnu_myresources_sel.gif') no-repeat;
+	}
+
+.MnuMarketOff {
+	width: 72px;
+	 background: url('http://localhost/img/img/mnu_market.gif') top no-repeat;
+	}
+
+.MnuMarketOn {
+	width: 72px;
+	 background: url('http://localhost/img/img/mnu_market.gif') bottom no-repeat;
+	}
+
+.MnuMarketSel {
+	width: 94px;
+	 background: url('http://localhost/img/img/mnu_market_sel.gif')  no-repeat;
+	}
+
+.MnuContactOff {
+	width: 96px;
+	 background: url('http://localhost/img/img/mnu_contact.gif') top left no-repeat;
+	}
+
+.MnuContactOn {
+	width: 96px;
+	 background: url('http://localhost/img/img/mnu_contact.gif') bottom left no-repeat;
+	}
+
+.MnuContactSel {
+	width: 118px;
+	 background: url('http://localhost/img/img/mnu_contact_sel.gif') no-repeat;
+	}
+
+.MnuStatisticsOff {
+	width: 111px;
+	background: url('http://localhost/img/img/mnu_statistics.gif') top left no-repeat;
+	}
+
+.MnuStatisticsOn {
+	width: 111px;
+	background: url('http://localhost/img/img/mnu_statistics.gif') bottom left no-repeat;
+	}
+
+.MnuStatisticsSel {
+	width: 134px;
+	background: url('http://localhost/img/img/mnu_statistics_sel.gif') no-repeat;
+	}
+
+.MnuAnalyticsOff {
+	width: 108px;
+	background: url('http://localhost/img/img/mnu_analytics.gif') top left no-repeat;
+	}
+
+.MnuAnalyticsOn {
+	width: 108px;
+	background: url('http://localhost/img/img/mnu_analytics.gif') bottom left no-repeat;
+	}
+
+.MnuAnalyticsSel {
+	width: 130px;
+	background: url('http://localhost/img/img/mnu_analytics_sel.gif') no-repeat;
+	}
+
+.MnuPersonalareaOff {
+	width: 156px;
+	background: url('http://localhost/img/img/mnu_personalarea.gif') top left no-repeat;
+	}
+
+.MnuPersonalareaOn {
+	width: 156px;
+	background: url('http://localhost/img/img/mnu_personalarea.gif') bottom left no-repeat;
+	}
+
+.MnuPersonalareaSel {
+	width: 179px;
+	background: url('http://localhost/img/img/mnu_personalarea_sel.gif') no-repeat;
+	}
+
+.HeadLine {
+	width: 960px;
+	height: 1px;
+	background: url('http://localhost/img/img/mnu_line.gif') no-repeat;
+	}
+
+/* Меню второго уровня */
+.SubMenuSel,
+.SubMenuOff {
+	float: left;
+	font-size: 16px;
+	padding: 10px 20px;
+	text-shadow: 0px 1px 0px #FFF;
+	}
+
+.SubMenuSel a {
+	color: #373737;
+	text-decoration: none;
+	}
+
+.SubMenuSel a:hover {
+	color: #007AB4;
+	text-decoration: none;
+	border-bottom: 1px solid #B5CCDA;
+	}
+
+.SubMenuOff a {
+	color: #808080;
+	text-decoration: none;
+	border-bottom: 1px solid #D2D3D5;
+	}
+
+.SubMenuOff a:hover {
+	color: #007AB4;
+	text-decoration: none;
+	border-bottom: 1px solid #B5CCDA;
+	}
+
+.SubMenuSep {
+	float: left;
+	width: 1px;
+	height: 42px;
+	background: url('http://localhost/img/img/submenusep.gif') no-repeat;
+	}
+/* @end */
+
+
+
+/* @group Body */
+/* Рамки для группирования форм и таблиц */
+.FrameTop,
+.FrameMid,
+.FrameBot {
+	width: 960px;
+	background-color: #FFF;
+	}
+
+.FrameTop {
+	height: 14px;
+	background: url('http://localhost/img/img/frame_top.gif') no-repeat;
+	}
+
+.FrameMid {
+	background: url('http://localhost/img/img/frame_mid.gif') repeat-y;
+	}
+
+.FrameBot {
+	height: 14px;
+	background: url('http://localhost/img/img/frame_bot.gif') no-repeat;
+	}
+
+/* Таблицы */
+table th {
+	padding: 10px;
+	text-align: left;
+	color: #8F939B;
+	font-size: 12px;
+	font-weight: normal;
+	vertical-align: bottom;
+	line-height: 15px;
+	border-bottom: 1px solid #B9BBC0;
+	}
+
+table td {
+	padding: 10px;
+	text-align: left;
+	font-size: 14px;
+	font-weight: normal;
+	vertical-align: top;
+	line-height: 15px;
+	border-bottom: 1px solid #D9D9DB;
+	}
+
+table td span {
+	font-size: 16px;
+	font-weight: bold;
+	}
+
+table td img {
+	border: 1px solid #2B2D3A;
+	}
+
+.ItemUnsel {
+	background-color: #EDEDED;
+	}
+
+.ItemSel {
+	background-color: #E5E5E5;
+	cursor: pointer;
+	}
+
+/* Кнопки */
+.BtnBox {
+	padding: 20px 60px 20px 0;
+	height: 25px;
+	}
+
+.BtnBoxCol {
+	padding: 20px 15px 20px 0;
+	height: 25px;
+	}
+
+.BtnBoxField {
+	padding: 0 15px 15px 0;
+	height: 25px;
+	}
+
+.BtnOtherCondOff, .BtnOtherCondOn,
+.BtnDenyOff, .BtnDenyOn,
+.BtnRepPropOff, .BtnRepPropOn,
+.BtnAddOff, .BtnAddOn,
+.BtnSelectOff, .BtnSelectOn,
+.BtnUnselectOff, .BtnUnselectOn,
+.BtnPaySystemOff, .BtnPaySystemOn,
+.BtnLoadImageOff, .BtnLoadImageOn,
+.BtnExportExcellOff, .BtnExportExcellOn,
+.BtnPrintFinDocsOff, .BtnPrintFinDocsOn,
+.BtnChangeOff, .BtnChangeOn,
+.BtnRejectOff, .BtnRejectOn,
+.BtnTakeOff, .BtnTakeOn,
+.BtnOfferOff, .BtnOfferOn,
+.BtnNextOff, .BtnNextOn,
+.BtnCancelOff, .BtnCancelOn,
+.BtnSelectExOfferOff, .BtnSelectExOfferOn,
+.BtnRespondOfferOff, .BtnRespondOfferOn,
+.BtnHistoryOffersOff, .BtnHistoryOffersOn,
+.BtnCopyOff, .BtnCopyOn,
+.BtnExtendOff, .BtnExtendOn,
+.BtnPostOff, .BtnPostOn,
+.BtnNewOfferOff, .BtnNewOfferOn,
+.BtnCheckOff, .BtnCheckOn,
+.BtnLoadSavedOff, .BtnLoadSavedOn,
+.BtnStartLoadOff, .BtnStartLoadOn,
+.BtnLoadServerAsOff, .BtnLoadServerAsOn,
+.BtnAddObjectOff, .BtnAddObjectOn,
+.BtnImportOff, .BtnImportOn,
+.BtnAddFileOff, .BtnAddFileOn,
+.BtnDetailOff, .BtnDetailOn,
+.BtnImportMetadataOff, .BtnImportMetadataOn,
+.BtnNoSaveOff, .BtnNoSaveOn,
+.BtnSaveOff, .BtnSaveOn,
+.BtnLoadOff, .BtnLoadOn,
+.BtnSeeOff, .BtnSeeOn,
+.BtnDeleteOff, .BtnDeleteOn {
+	height: 25px;
+	float: right;
+	padding: 0 0 0 10px;
+	cursor: pointer;
+	}
+
+/* Другие условия */
+.BtnOtherCondOff {
+	width: 144px;
+	background: url('http://localhost/img/img/btn_othercond.gif') top no-repeat;
+	}
+
+.BtnOtherCondOn {
+	width: 144px;
+	background: url('http://localhost/img/img/btn_othercond.gif') bottom no-repeat;
+	}
+
+/* Отказаться */
+.BtnDenyOff {
+	width: 116px;
+	background: url('http://localhost/img/img/btn_deny.gif') top no-repeat;
+	}
+
+.BtnDenyOn {
+	width: 116px;
+	background: url('http://localhost/img/img/btn_deny.gif') bottom no-repeat;
+	}
+
+/* Снять предложение */
+.BtnRepPropOff {
+	width: 171px;
+	background: url('http://localhost/img/img/btn_repealprop.gif') top no-repeat;
+	}
+
+.BtnRepPropOn {
+	width: 171px;
+	background: url('http://localhost/img/img/btn_repealprop.gif') bottom no-repeat;
+	}
+
+/* Добавить */
+.BtnAddOff {
+	width: 103px;
+	background: url('http://localhost/img/img/btn_add.gif') top no-repeat;
+	}
+
+.BtnAddOn {
+	width: 103px;
+	background: url('http://localhost/img/img/btn_add.gif') bottom no-repeat;
+	}
+
+/* Выбрать все */
+.BtnSelectOff {
+	width: 123px;
+	background: url('http://localhost/img/img/btn_selectall.gif') top no-repeat;
+	}
+
+.BtnSelectOn {
+	width: 123px;
+	background: url('http://localhost/img/img/btn_selectall.gif') bottom no-repeat;
+	}
+
+/* Отменить все */
+.BtnUnselectOff {
+	width: 130px;
+	background: url('http://localhost/img/img/btn_unselectall.gif') top no-repeat;
+	}
+
+.BtnUnselectOn {
+	width: 130px;
+	background: url('http://localhost/img/img/btn_unselectall.gif') bottom no-repeat;
+	}
+
+/* Перевести деньги через платежную систему */
+.BtnPaySystemOff {
+	width: 325px;
+	background: url('http://localhost/img/img/btn_paysystem.gif') top no-repeat;
+	}
+
+.BtnPaySystemOn {
+	width: 325px;
+	background: url('http://localhost/img/img/btn_paysystem.gif') bottom no-repeat;
+	}
+
+/* Загрузить картинку */
+.BtnLoadImageOff {
+	width: 165px;
+	background: url('http://localhost/img/img/btn_loadimage.gif') top no-repeat;
+	}
+
+.BtnLoadImageOn {
+	width: 165px;
+	background: url('http://localhost/img/img/btn_loadimage.gif') bottom no-repeat;
+	}
+
+/* Экспортировать в Excell */
+.BtnExportExcellOff {
+	width: 197px;
+	background: url('http://localhost/img/img/btn_exportexcell.gif') top no-repeat;
+	}
+
+.BtnExportExcellOn {
+	width: 197px;
+	background: url('http://localhost/img/img/btn_exportexcell.gif') bottom no-repeat;
+	}
+
+/* Распечатать финансовые документы */
+.BtnPrintFinDocsOff {
+	width: 280px;
+	background: url('http://localhost/img/img/btn_printfindocs.gif') top no-repeat;
+	}
+
+.BtnPrintFinDocsOn {
+	width: 280px;
+	background: url('http://localhost/img/img/btn_printfindocs.gif') bottom no-repeat;
+	}
+
+/* Изменить */
+.BtnChangeOff {
+	width: 103px;
+	background: url('http://localhost/img/img/btn_change.gif') top no-repeat;
+	}
+
+.BtnChangeOn {
+	width: 103px;
+	background: url('http://localhost/img/img/btn_change.gif') bottom no-repeat;
+	}
+
+/* Отклонить */
+.BtnRejectOff {
+	width: 110px;
+	background: url('http://localhost/img/img/btn_reject.gif') top no-repeat;
+	}
+
+.BtnRejectOn {
+	width: 110px;
+	background: url('http://localhost/img/img/btn_reject.gif') bottom no-repeat;
+	}
+
+/* Принять */
+.BtnTakeOff {
+	width: 95px;
+	background: url('http://localhost/img/img/btn_take.gif') top no-repeat;
+	}
+
+.BtnTakeOn {
+	width: 95px;
+	background: url('http://localhost/img/img/btn_take.gif') bottom no-repeat;
+	}
+
+/* Предложить */
+.BtnOfferOff {
+	width: 120px;
+	background: url('http://localhost/img/img/btn_offer.gif') top no-repeat;
+	}
+
+.BtnOfferOn {
+	width: 120px;
+	background: url('http://localhost/img/img/btn_offer.gif') bottom no-repeat;
+	}
+
+/* Продолжить */
+.BtnNextOff {
+	width: 104px;
+	background: url('http://localhost/img/img/btn_next.gif') top no-repeat;
+	}
+
+.BtnNextOn {
+	width: 104px;
+	background: url('http://localhost/img/img/btn_next.gif') bottom no-repeat;
+	}
+
+/* Отменить */
+.BtnCancelOff {
+	width: 103px;
+	background: url('http://localhost/img/img/btn_cancel.gif') top no-repeat;
+	}
+
+.BtnCancelOn {
+	width: 103px;
+	background: url('http://localhost/img/img/btn_cancel.gif') bottom no-repeat;
+	}
+
+/* Выбрать предложение из имеющихся */
+.BtnSelectExOfferOff {
+	width: 283px;
+	background: url('http://localhost/img/img/btn_selectexoffer.gif') top no-repeat;
+	}
+
+.BtnSelectExOfferOn {
+	width: 283px;
+	background: url('http://localhost/img/img/btn_selectexoffer.gif') bottom no-repeat;
+	}
+
+/* Откликнуться на предложение */
+.BtnRespondOfferOff {
+	width: 238px;
+	background: url('http://localhost/img/img/btn_respondoffer.gif') top no-repeat;
+	}
+
+.BtnRespondOfferOn {
+	width: 238px;
+	background: url('http://localhost/img/img/btn_respondoffer.gif') bottom no-repeat;
+	}
+
+/* История предложений */
+.BtnHistoryOffersOff {
+	width: 188px;
+	background: url('http://localhost/img/img/btn_historyoffers.gif') top no-repeat;
+	}
+
+.BtnHistoryOffersOn {
+	width: 188px;
+	background: url('http://localhost/img/img/btn_historyoffers.gif') bottom no-repeat;
+	}
+
+/* Копировать */
+.BtnCopyOff {
+	width: 117px;
+	background: url('http://localhost/img/img/btn_copy.gif') top no-repeat;
+	}
+
+.BtnCopyOn {
+	width: 117px;
+	background: url('http://localhost/img/img/btn_copy.gif') bottom no-repeat;
+	}
+
+/* Продлить */
+.BtnExtendOff {
+	width: 104px;
+	background: url('http://localhost/img/img/btn_extend.gif') top no-repeat;
+	}
+
+.BtnExtendOn {
+	width: 104px;
+	background: url('http://localhost/img/img/btn_extend.gif') bottom no-repeat;
+	}
+
+/* Опубликовать */
+.BtnPostOff {
+	width: 133px;
+	background: url('http://localhost/img/img/btn_post.gif') top no-repeat;
+	}
+
+.BtnPostOn {
+	width: 133px;
+	background: url('http://localhost/img/img/btn_post.gif') bottom no-repeat;
+	}
+
+/* Новое предложение */
+.BtnNewOfferOff {
+	width: 170px;
+	background: url('http://localhost/img/img/btn_newoffer.gif') top no-repeat;
+	}
+
+.BtnNewOfferOn {
+	width: 170px;
+	background: url('http://localhost/img/img/btn_newoffer.gif') bottom no-repeat;
+	}
+
+/* Проверить */
+.BtnCheckOff {
+	width: 110px;
+	background: url('http://localhost/img/img/btn_check.gif') top no-repeat;
+	}
+
+.BtnCheckOn {
+	width: 110px;
+	background: url('http://localhost/img/img/btn_check.gif') bottom no-repeat;
+	}
+
+/* Загрузить сохраненный */
+.BtnLoadSavedOff {
+	width: 194px;
+	background: url('http://localhost/img/img/btn_loadsaved.gif') top no-repeat;
+	}
+
+.BtnLoadSavedOn {
+	width: 194px;
+	background: url('http://localhost/img/img/btn_loadsaved.gif') bottom no-repeat;
+	}
+
+/* Начать загрузку */
+.BtnStartLoadOff {
+	width: 142px;
+	background: url('http://localhost/img/img/btn_startload.gif') top no-repeat;
+	}
+
+.BtnStartLoadOn {
+	width: 142px;
+	background: url('http://localhost/img/img/btn_startload.gif') bottom no-repeat;
+	}
+
+/* Pагрузить сервер как */
+.BtnLoadServerAsOff {
+	width: 177px;
+	background: url('http://localhost/img/img/btn_loadserveras.gif') top no-repeat;
+	}
+
+.BtnLoadServerAsOn {
+	width: 177px;
+	background: url('http://localhost/img/img/btn_loadserveras.gif') bottom no-repeat;
+	}
+
+/* Добавить объект */
+.BtnAddObjectOff {
+	width: 153px;
+	background: url('http://localhost/img/img/btn_addobject.gif') top no-repeat;
+	}
+
+.BtnAddObjectOn {
+	width: 153px;
+	background: url('http://localhost/img/img/btn_addobject.gif') bottom no-repeat;
+	}
+
+/* Импортировать */
+.BtnImportOff {
+	width: 140px;
+	background: url('http://localhost/img/img/btn_import.gif') top no-repeat;
+	}
+
+.BtnImportOn {
+	width: 140px;
+	background: url('http://localhost/img/img/btn_import.gif') bottom no-repeat;
+	}
+
+/* Добавить файл */
+.BtnAddFileOff {
+	width: 140px;
+	background: url('http://localhost/img/img/btn_addfile.gif') top no-repeat;
+	}
+
+.BtnAddFileOn {
+	width: 140px;
+	background: url('http://localhost/img/img/btn_addfile.gif') bottom no-repeat;
+	}
+
+/* Детально */
+.BtnDetailOff {
+	width: 103px;
+	background: url('http://localhost/img/img/btn_detail.gif') top no-repeat;
+	}
+
+.BtnDetailOn {
+	width: 103px;
+	background: url('http://localhost/img/img/btn_detail.gif') bottom no-repeat;
+	}
+
+/* Импорт метаданных */
+.BtnImportMetadataOff {
+	width: 171px;
+	background: url('http://localhost/img/img/btn_importmetadata.gif') top no-repeat;
+	}
+
+.BtnImportMetadataOn {
+	width: 171px;
+	background: url('http://localhost/img/img/btn_importmetadata.gif') bottom no-repeat;
+	}
+
+/* Не сохранять */
+.BtnNoSaveOff {
+	width: 127px;
+	background: url('http://localhost/img/img/btn_nosave.gif') top no-repeat;
+	}
+
+.BtnNoSaveOn {
+	width: 127px;
+	background: url('http://localhost/img/img/btn_nosave.gif') bottom no-repeat;
+	}
+
+/* Сохранить */
+.BtnSaveOff {
+	width: 111px;
+	background: url('http://localhost/img/img/btn_save.gif') top no-repeat;
+	}
+
+.BtnSaveOn {
+	width: 111px;
+	background: url('http://localhost/img/img/btn_save.gif') bottom no-repeat;
+	}
+
+/* Загрузить */
+.BtnLoadOff {
+	width: 108px;
+	background: url('http://localhost/img/img/btn_load.gif') top no-repeat;
+	}
+
+.BtnLoadOn {
+	width: 108px;
+	background: url('http://localhost/img/img/btn_load.gif') bottom no-repeat;
+	}
+
+/* Посмотреть */
+.BtnSeeOff {
+	width: 117px;
+	background: url('http://localhost/img/img/btn_see.gif') top no-repeat;
+	}
+
+.BtnSeeOn {
+	width: 117px;
+	background: url('http://localhost/img/img/btn_see.gif') bottom no-repeat;
+	}
+
+/* Удалить */
+.BtnDeleteOff {
+	width: 95px;
+	background: url('http://localhost/img/img/btn_delete.gif') top no-repeat;
+	}
+
+.BtnDeleteOn {
+	width: 95px;
+	background: url('http://localhost/img/img/btn_delete.gif') bottom no-repeat;
+	}
+
+
+/* ФОРМЫ */
+form input {
+	vertical-align: middle;
+	height: 20px;
+	line-height: 20px;
+	margin: 0;
+	padding: 0 5px 0 5px;
+	font-family: Arial, Myriad Pro, Sans-Serif;
+	font-size: 14px;
+	background: transparent;
+	border: 0;
+	color: #3D3D3D;
+	}
+
+form textarea {
+	padding: 0 5px 0 5px;
+	font-family: Arial, Myriad Pro, Sans-Serif;
+	font-size: 16px;
+	background: transparent;
+	resize: none;
+	border: 0;
+	color: #3D3D3D;
+	}
+
+select {
+	font-family: Arial, Myriad Pro, Sans-Serif;
+	font-size: 14px;
+	letter-spacing: 0px;
+	color: #3D3D3D;
+	}
+
+form table td {
+	border: 0;
+	margin: 0;
+	padding: 0;	
+	}
+
+form table {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid #FFF;
+	}
+
+.FrmTab td {
+	border: 0;
+	padding: 0px;
+	vertical-align: middle;
+	background-color: #a9a9a9;
+	}
+
+.FrmTabs {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	}
+
+.FrmTabs th {
+	white-space: nowrap;
+	vertical-align: top;
+	padding: 15px 10px 0 10px;
+	border: 0;
+	font-size: 13px;
+	}
+
+.FrmTabs td {
+	vertical-align: top;
+	padding: 15px 0 0 10px;
+	border: 0;
+	font-size: 15px;
+	}
+
+.FrmTabs td a {
+	color: #007AB4;
+	text-decoration: none;
+	border-bottom: 1px solid #B5CCDA;
+	}
+
+.FrmTabs td a:hover {
+	color: #007AB4;
+	text-decoration: none;
+	border-bottom: 1px solid #007AB4;
+	}
+
+fieldset {
+	margin: 15px 0 15px 0;
+	border: 0;
+	padding: 0;
+	background-color: #DDD;
+	}
+
+.FrmInput {
+	background: url('http://localhost/img/img/frm_solid.gif') repeat-x;
+	border: 1px solid #989898;
+	background-color: #CCC;
+	}
+
+.FrmLabel {
+	padding: 15px 0 3px 0;
+	color: #81858E;
+	font-size: 13px;
+	text-shadow: 0px 1px 0px #FFF;
+	letter-spacing: 0;
+	font-weight: normal;
+	}
+
+.FrmX {
+	width: 20px;
+	color: #81858E;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	text-shadow: 0px 1px 0px #FFF;
+	}
+
+.FrmRadio {
+	padding-top: 15px;
+	}
+
+.InputFile {
+	vertical-align: middle;
+	margin-top: 3px;
+	background: url('http://localhost/img/img/frm_solid.gif') repeat-x;
+	background-color: #CCC;
+	height: 25px;
+	border: 1px solid #989898;
+	}
+
+.InputFile input {
+	border: transparent;
+	background: transparent;
+	}
+
+.FrmInputTab {
+	border: 0;
+	}
+
+.FrmInputTab th {
+	border: 0;
+	padding: 2px 15px 2px 15px;
+	font-size: 13px;
+	color: #6F7282;
+	}
+
+.FrmInputTab td {
+	padding-top: 2px;
+	}
+
+.FrmRadio span {
+	padding-left: 5px;
+	vertical-align: middle;
+	line-height: 18px;
+	color: #666;
+	font-size: 15px;
+	text-shadow: 0px 1px 0px #FFF;
+	letter-spacing: 0;
+	font-weight: normal;
+	}
+
+.FrmCheckBox {
+	padding: 13px 0 5px 0px;
+	}
+
+.FrmColLeft {
+	margin-left: 65px;
+	float: left;
+	width: 390px;
+	}
+
+.FrmColRight {
+	margin-right: 65px;
+	float: right;
+	width: 390px;
+	}
+
+.DefCheck {
+	position: relative;
+	top:  100px;
+	left: 200px;
+	}
+
+.BigCover {
+	border-bottom: 1px solid #FFF;
+	margin: 10px;
+	}
+
+/* НАБОРНЫЙ СЕЛЕКТОР JQuery */
+
+/* container that surrounds entire asmSelect widget */
+.asmContainer {
+	}
+
+/* the newly created regular 'select' */
+.asmSelect {
+	display: inline; 
+	width: 185px; 
+	}
+
+/* disabled options in new select */
+.asmOptionDisabled {
+	color: #CCC;
+	}
+
+/* the highlight span */
+.asmHighlight {
+	}
+
+/* html list that contains selected items */
+.asmList {
+	margin: 3px 0 10px 0; 
+	position: relative;
+	display: block;
+	padding-left: 0; 
+	list-style: none; 
+	}
+
+/* li item from the html list above */
+.asmListItem {
+	position: relative; 
+	margin-left: 0;
+	padding-left: 0 3px 0 3px;
+	list-style: none;
+	width: 100%; 
+	margin: 0; 
+	}
+
+.asmListItem:hover {
+	border: 0;
+	}
+
+/* this is a span that surrounds the text in the item, except for the remove link */
+.asmListItemLabel {
+	padding: 6px; 
+	display: block;
+	font-size: 14px;
+	font-weight: normal;
+	border-bottom: 1px solid #E2E2E5;
+	}
+
+.asmListSortable .asmListItemLabel {
+	cursor: move; 
+	}
+
+/* the remove link in each list item */
+.asmListItemRemove {
+	position: absolute;
+	right: 0; 
+	top: 0;
+	padding: 5px; 
+	background: url('http://localhost/img/img/btn_del.gif') center right no-repeat;
+	text-decoration: none;
+	}
+
+
+
+/* КАЛЕНДАРЬ JQuery */
+
+#datepicker_div {
+	display: none;
+	border: 1px solid #CCC;
+	z-index: 10;
+	font-size: 12px;
+	padding: 0;
+	margin: 0;
+	background: #e2e4e4;
+	}
+
+#datepicker_div td {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	font-size: 12px;
+	}
+
+.datepicker_inline {
+	float: left;
+	display: block;
+	border: 0;
+	font-size: 12px;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	background: #CCC;
+	width: 180px;
+	}
+
+#datepicker_div a,
+.datepicker_inline a {
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	background: none;
+	}
+
+#datepicker_div a:hover,
+.datepicker_inline a:hover {
+	color: #007AB4 !important;
+	}
+
+.datepicker .datepicker_daysCell {
+	color: #000;
+	width: 30px;
+	height: 25px;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #FFF;
+	color: #373737;
+	}
+
+#datepicker .datepicker_daysCell a {
+	display: block;
+	}
+
+.datepicker .datepicker_weekEndCell {
+	background: #F2F2F2;
+	color: #373737;
+	width: 30px;
+	height: 25px;
+	text-align: center;
+	vertical-align: middle;
+	}
+
+.datepicker .datepicker_daysCellOver {
+	background: #519EC9;
+	cursor: pointer;
+	color: #FFF;
+	text-shadow: 0px -1px 0px #007AB4;
+	}
+
+.datepicker .datepicker_unselectable {
+	color: #CCC;
+	}
+
+.datepicker_today {
+	background: #B8D7EA !important;
+	color: #373737 !important;
+	text-shadow: 0px 1px 0px #FFF !important;
+	}
+
+.datepicker_currentDay {
+	background: #519EC9 !important;
+	cursor: pointer;
+	color: #FFF !important;
+	text-shadow: 0px -1px 0px #007AB4;
+	}
+
+.datepicker_links {
+	
+	}
+
+
+.datepicker_clear {
+	padding: 3px 6px;
+	float: left;
+	width: 34%;
+	}
+
+.datepicker_close {
+	padding: 3px 6px;
+	float: right;
+	width: 34%;
+	text-align: right;
+	}
+
+.datepicker_prev {
+	padding: 3px 6px;
+	float: left;
+	width: 30%;
+	}
+
+.datepicker_next{
+	padding: 3px 6px;
+	float: right;
+	width: 30%;
+	text-align: right;
+	}
+
+.datepicker_current {
+	padding: 3px 6px;
+	float: left;
+	width: 22%;
+	text-align: center;
+	}
+
+
+.datepicker_header {
+	padding: 5px 0 5px 5px;
+	font-weight: normal;
+	}
+
+/* @end */
+
+
+
+/* @group Footer */
+.Footer {
+	width: 960px;
+	height: 60px;
+	margin: auto;
+	clear: both;
+	}
+/* @end */
+
+/* END */

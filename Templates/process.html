@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Рабочее место владельца контента</title>
+	<script lang="javascript">
+<!-- 
+ function mySubmit() {
+            var server=document.getElementById("Server").value;
+	    var login=document.getElementById("Login").value;
+	    var passwd=document.getElementById("Password").value;
+            document.location='userftp.pl?login=' + login + '&pass=' + passwd + '&server=' + server;
+        }
+-->
+	</script>
+</head>
+
+<link rel="stylesheet" type="text/css" href="http://localhost/style.css" />
+
+<body>
+
+	<!-- Блок страницы задающий общую, минимальную ширину страницы... -->
+	<div class="AllBody">
+
+		<!-- Шапка... -->
+		<div class="HeaderBlock">
+		
+			<!-- Логотип... -->
+			<div class="Logo"></div>
+			<!-- ...Логотип -->
+			
+			<!-- Главное меню... -->
+				<div class="MenuBox">
+					<div class="MnuMyResourcesSel" onclick="document.location='?act=list'"></div>
+					<div class="MnuMarketOff" onclick="document.location='market.html'" onmouseover="this.className='MnuMarketOn'" onmouseout="this.className='MnuMarketOff'"></div>
+					<div class="MnuContactOff" onclick="document.location='#'" onmouseover="this.className='MnuContactOn'" onmouseout="this.className='MnuContactOff'"></div>
+					<div class="MnuStatisticsOff" onclick="document.location='stat.html'" onmouseover="this.className='MnuStatisticsOn'" onmouseout="this.className='MnuStatisticsOff'"></div>
+					<div class="MnuAnalyticsOff" onclick="document.location='#'" onmouseover="this.className='MnuAnalyticsOn'" onmouseout="this.className='MnuAnalyticsOff'"></div>
+					<div class="MnuPersonalareaOff" onclick="document.location='cab.html'" onmouseover="this.className='MnuPersonalareaOn'" onmouseout="this.className='MnuPersonalareaOff'"></div>
+				</div>
+			<!-- ...Главное меню -->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			<div class="HeadLine"></div>
+			
+			<!-- Меню вотрого уровня... --->
+			<div class="SubMenuOff"><a href="?act=list">Каталог ресурсов</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuSel"><a href="?act=load">Загрузка данных</a></div>
+			<!-- ...Меню вотрого уровня --->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			
+			<!-- Тело страницы... -->
+		
+				<div class="h1"><a href="?act=load">Загрузка данных</a> / Состояние загрузки</div>
+
+				<!-- Рамка... -->
+				<div class="FrameTop"></div>
+				<div class="FrameMid">
+
+					<form id="form1" name="form1" method="post" action="">
+
+						<div class="FrmColLeft">
+
+							<div class="FrmLabel">Для медиа объекта</div>
+								<select style="width: 392px;" name="Object" id="Object" onchange="MM_jumpMenu('parent',this,0)">
+									<TMPL_LOOP NAME="media_objects">
+									<option value="<TMPL_VAR NAME="mediaID">"><TMPL_VAR NAME="Name"></option>
+									</TMPL_LOOP>
+								</select>
+							</table>
+		
+							<div class="FrmRadio">
+								<label><input name="RadioGroup1" type="radio" id="RadioGroup1_0" value="radio" disabled="disabled" /><span>Онлайн загрузка для файлов не более 50 Кб.</span></label>
+								<br />
+								<label><input type="radio" name="RadioGroup1" value="radio" id="RadioGroup1_1" checked="checked" /><span>Офлайн загрузка для больших файлов</span></label>
+							</div>
+
+							<fieldset>
+								<div align="center">
+									<table style="border: 0;" width="360" border="0" align="center" cellpadding="0" cellspacing="0">
+										<tr>
+											<td>
+												<table align="center" style="border: 0;" border="0" cellspacing="0" cellpadding="0">
+													<tr>
+														<td>
+															<div class="FrmLabel">Протокол</div>
+															<table border="0" cellspacing="0" cellpadding="0">
+																<tr>
+																	<td class="FrmInput">
+																		<select style="width: 170px;" name="Proto" id="Proto" onchange="MM_jumpMenu('parent',this,0)">
+																		<option value="1">FTP</option>
+																		<option value="2" disabled=1>HTTP</option>
+																	</select>
+																	</td>
+																	
+																</tr>
+															</table>
+														</td>
+														<td>
+															<div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div>
+														</td>
+														<td>
+															<div class="FrmLabel">Сервер</div>
+															<table border="0" cellspacing="0" cellpadding="0">
+																<tr>
+																	<td class="FrmInput"><input style="width: 157px;" type="text" name="Server" id="Server" value="<TMPL_VAR NAME="server">"/></td>
+																</tr>
+															</table>
+														</td>
+													</tr>
+												</table>
+							
+  												<table align="center" style="border: 0;" border="0" cellspacing="0" cellpadding="0">
+													<tr>
+														<td>
+															<div class="FrmLabel">Логин</div>
+															<table border="0" cellspacing="0" cellpadding="0">
+																<tr>
+																	<td class="FrmInput"><input style="width: 157px;" type="text" name="Login" id="Login" value="<TMPL_VAR NAME="login">" /></td>
+																</tr>
+															</table>
+														</td>
+														<td>
+															<div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div>
+														</td>
+														<td>
+															<div class="FrmLabel">Пароль</div>
+															<table border="0" cellspacing="0" cellpadding="0">
+																<tr>
+																	<td class="FrmInput"><input style="width: 157px;" type="password" name="Password" id="Password" value="<TMPL_VAR NAME="passwd">" /></td>
+																</tr>
+															</table>
+														</td>
+													</tr>
+												</table>
+												
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div style="width: 20px; height: 20px; clear: both;"><spacer type="block" width="20" height="20"></div>
+												<div class="BtnCheckOff" onclick="javascript:mySubmit()" onmouseover="this.className='BtnCheckOn'" onmouseout="this.className='BtnCheckOff'"></div>
+												<div style="width: 15px; height: 15px; clear: both;"><spacer type="block" width="15" height="15"></div>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</fieldset>
+
+  							<table style="border: 0;" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<div class="FrmLabel">Файл к закачке</div>
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+													<td class="FrmInput"><input style="width: 173px;" type="text" name="FileToLoad" id="FileToLoad" value="<TMPL_VAR NAME="filetoload">" /></td>
+											</tr>
+										</table>
+									</td>
+									<td>
+										<div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div>
+									</td>
+									<td>
+										<div class="FrmLabel">Формат</div>
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+													<td class="FrmInput"><input style="width: 173px;" type="text" name="Format" id="Format" /></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+
+						</div>
+					
+						<div class="FrmColRight">
+
+							<div class="FrmLabel">Тип данных</div>
+								<select style="width: 185px;" name="Type" id="Type" onchange="MM_jumpMenu('parent',this,0)">
+									<option value="5">Видео</option>
+									<option value="1">Аудио</option>
+									<option value="2">Субтитры</option>
+									<option value="3">Картинка</option>
+									<option value="4">Данные</option>
+								</select>
+							</table>
+
+							<table width="300" style="border: 0;" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td><div class="FrmLabel"><div class="FrmInput"><input style="width: 173px;" type="text" name="ServerName" id="ServerName" /></div></div></td>
+									<td><div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div></td>
+									<td><div class="FrmLabel"><div class="BtnLoadServerAsOff" onclick="document.location='#'" onmouseover="this.className='BtnLoadServerAsOn'" onmouseout="this.className='BtnLoadServerAsOff'"></div></div></td>
+
+								</tr>
+
+								<tr>
+									<td><div class="FrmLabel"><div class="FrmInput">
+									<select style="width: 183px;" name="ServerList" id="ServerList" onchange="MM_jumpMenu('parent',this,0)">
+									<TMPL_LOOP NAME="ServerList">
+										<option value="<TMPL_VAR NAME="ServerId">"><TMPL_VAR NAME="ServerSavedName"></option>
+									</TMPL_LOOP>
+									</select>
+									</div></div></td>
+									<td><div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div></td>
+									<td><div class="FrmLabel"><div class="BtnLoadSavedOff" onclick="document.location='#'" onmouseover="this.className='BtnLoadSavedOn'" onmouseout="this.className='BtnLoadSavedOff'"></div></div></td>
+								</tr>
+							</table>
+
+							<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+
+
+
+							<table class="FrmTabs" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<th>Статус:</th>
+									<td style="font-size: 20px;">Новая закачка</td>
+								</tr>
+							</table>
+
+
+
+							<div class="FrmLabel"></div>
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td class="FrmInput">
+										<input type="hidden" name="act" value="offline">
+											<input type="hidden" name="form_save" value="1">
+												<input type="hidden" name="size" value="<TMPL_VAR NAME="SIZE">">
+									</td>
+								</tr>
+							</table>
+
+						</div>
+						
+						<div style="width: 0px; height: 0px; clear: both;"><spacer type="block" width="0" height="0"></div>
+					
+						<div class="BtnBox">
+							<div class="BtnStartLoadOff" onclick="document.form1.submit()" onmouseover="this.className='BtnStartLoadOn'" onmouseout="this.className='BtnStartLoadOff'"></div>
+						</div>
+					
+					</form>
+					
+				</div>
+				<div class="FrameBot"></div>
+				<!-- ...Рамка -->
+
+			<!-- ...Тело страницы -->
+			
+			<!-- Футер... -->
+				<div class="Footer"></div>
+			<!-- ...Футер -->
+			
+		</div>
+		<!-- ...Шапка -->
+	</div>
+	<!-- ...Блок страницы задающий общую, минимальную ширину страницы -->
+
+</body>
+</html>

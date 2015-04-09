@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Рабочее место владельца контента</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="http://localhost/style.css" />
+
+<body>
+
+	<!-- Блок страницы задающий общую, минимальную ширину страницы... -->
+	<div class="AllBody">
+
+		<!-- Шапка... -->
+		<div class="HeaderBlock">
+		
+			<!-- Логотип... -->
+			<div class="Logo"></div>
+			<!-- ...Логотип -->
+			
+			<!-- Главное меню... -->
+				<div class="MenuBox">
+					<div class="MnuMyResourcesSel" onclick="document.location='?act=list'"></div>
+					<div class="MnuMarketOff" onclick="document.location='market.html'" onmouseover="this.className='MnuMarketOn'" onmouseout="this.className='MnuMarketOff'"></div>
+					<div class="MnuContactOff" onclick="document.location='#'" onmouseover="this.className='MnuContactOn'" onmouseout="this.className='MnuContactOff'"></div>
+					<div class="MnuStatisticsOff" onclick="document.location='stat.html'" onmouseover="this.className='MnuStatisticsOn'" onmouseout="this.className='MnuStatisticsOff'"></div>
+					<div class="MnuAnalyticsOff" onclick="document.location='#'" onmouseover="this.className='MnuAnalyticsOn'" onmouseout="this.className='MnuAnalyticsOff'"></div>
+					<div class="MnuPersonalareaOff" onclick="document.location='?act=profile'" onmouseover="this.className='MnuPersonalareaOn'" onmouseout="this.className='MnuPersonalareaOff'"></div>
+				</div>
+			<!-- ...Главное меню -->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			<div class="HeadLine"></div>
+			
+			<!-- Меню вотрого уровня... --->
+			<div class="SubMenuSel"><a href="?act=list">Каталог ресурсов</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuOff"><a href="?act=load">Загрузка данных</a></div>
+			<!-- ...Меню вотрого уровня --->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			
+			<!-- Тело страницы... -->
+				<div class="h1">Медиа объект&nbsp;&#8212; <TMPL_VAR NAME = "name"></div>
+
+				<!-- Рамка... -->
+				<div class="FrameTop"></div>
+				<div class="FrameMid">
+
+					<form id="form1" name="form1" method="post">
+					
+						<div class="FrmColLeft">
+							
+							<div class="FrmLabel">Русское название</div>
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td class="FrmInput"><input style="width: 380px;" type="text" name="RusName" id="RusName" value = "<TMPL_VAR NAME = "name">" /></td>
+								</tr>
+							</table>
+
+							<div class="FrmLabel">Оригинальное название</div>
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+										<td class="FrmInput"><input style="width: 380px;" type="text" name="Name" id="Name" value = "<TMPL_VAR NAME = "name_original">" /></td>
+								</tr>
+							</table>
+							
+							<div class="FrmLabel">Автор</div>
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td class="FrmInput"><input style="width: 380px;" type="text" name="Autor" id="Autor" value = "<TMPL_VAR NAME = "author">" /></td>
+								</tr>
+							</table>
+
+							<table style="border: 0;" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<div class="FrmLabel">Год выпуска</div>
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td class="FrmInput"><input style="width: 90px;" type="text" name="year" id="Data" value = "<TMPL_VAR NAME = "creation_year">" /></td>
+											</tr>
+										</table>
+									</td>
+									<td>
+										<div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div>
+									</td>
+									<td>
+										<div class="FrmLabel">Страна произовитель</div>
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td class="FrmInput">
+													<select style="width: 258px;"  name="countries" id="Data">
+													<TMPL_LOOP NAME="countries">
+														<option value="<TMPL_VAR NAME="countryID">" <TMPL_VAR NAME="selected">><TMPL_VAR NAME = "country"></option>
+													</TMPL_LOOP>
+													</select>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+							
+							<div class="FrmLabel">Язык оригинала</div>
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td class="FrmInput">
+									<select style="width: 380px;"  name="lang" id="lang">
+									<TMPL_LOOP NAME="langs">
+										<option value="<TMPL_VAR NAME="langID">" <TMPL_VAR NAME="selected">><TMPL_VAR NAME = "langName"></option>
+									</TMPL_LOOP>
+									</select>
+									</td>
+								</tr>
+							</table>
+
+							<div class="FrmLabel">Описание</div>
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td class="FrmInput"><textarea style="width: 380px; height: 100px;" name="Note" id="Note"><TMPL_VAR NAME = "descr"></textarea></td>
+								</tr>
+							</table>							
+							
+							<div class="FrmLabel">Жанры</div>
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td class="FrmInput"><input style="width: 380px;" type="text" name="Genres" id="Genres" value = "<TMPL_VAR NAME = "genres">" /></td>
+								</tr>
+							</table>
+							
+						</div>
+					
+						<div class="FrmColRight">
+
+							<div align="center" style="padding-top: 10px;">
+								<img class="BigCover" src="<TMPL_VAR NAME="img">" width="300" height="419">
+							</div>
+
+						</div>
+						
+						<div style="width: 0px; height: 0px; clear: both;"><spacer type="block" width="0" height="0"></div>
+					
+						<div class="BtnBox">
+							<input type="hidden" name="id" value="<TMPL_VAR NAME = "id">">
+							<input type="hidden" name="act" value="<TMPL_VAR NAME = "act">">
+							<input type="hidden" name="form_save" value="1">
+							<div class="BtnDeleteOff" onclick="document.location='?act=del_m&id=<TMPL_VAR NAME="id">'" onmouseover="this.className='BtnDeleteOn'" onmouseout="this.className='BtnDeleteOff'"></div>	
+							<div class="BtnSaveOff" onclick="document.form1.submit()" onmouseover="this.className='BtnSaveOn'" onmouseout="this.className='BtnSaveOff'"></div>
+							<div class="BtnDetailOff" onclick="document.location='#'" onmouseover="this.className='BtnDetailOn'" onmouseout="this.className='BtnDetailOff'"></div>
+							<div class="BtnImportMetadataOff" onclick="document.location='#'" onmouseover="this.className='BtnImportMetadataOn'" onmouseout="this.className='BtnImportMetadataOff'"></div>
+							
+						</div>
+					
+					</form>
+					
+				</div>
+				<div class="FrameBot"></div>
+				<!-- ...Рамка -->
+
+				<div style="width: 40px; height: 40px; clear: both;"><spacer type="block" width="40" height="40"></div>
+
+				<!-- Рамка... -->
+				<div class="FrameTop"></div>
+				<div class="FrameMid">
+					<table width="830" align="center" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<th>&nbsp;</th>
+							<th>Файл</th>
+							<th>Описание</th>
+							<th>Статус</th>
+							<th>Основной</th>
+						</tr>
+						<TMPL_LOOP NAME="files">
+						<tr class="ItemUnsel" onclick="document.location='?act=process&id=<TMPL_VAR NAME="file_id">'" onmouseover="this.className='ItemSel'" onmouseout="this.className='ItemUnsel'">
+							<td><img style="border: 0;" src="http://localhost/img/img/ico_image.gif" width="15" height="16"></td>
+							<td><TMPL_VAR NAME="file_name"></td>
+							<td><TMPL_VAR NAME="file_type"></td>
+							<td><TMPL_VAR NAME="file_status"></td>
+							<td><TMPL_VAR NAME="ismain"></td>
+						</tr>
+						</TMPL_LOOP>
+					</table>
+					
+					<div class="BtnBox">
+						<div class="BtnAddObjectOff" onclick="document.location='?act=add'" onmouseover="this.className='BtnAddObjectOn'" onmouseout="this.className='BtnAddObjectOff'"></div>
+						<div class="BtnImportOff" onclick="document.location='#'" onmouseover="this.className='BtnImportOn'" onmouseout="this.className='BtnImportOff'"></div>
+					</div>
+					
+				</div>
+				<div class="FrameBot"></div>
+				<!-- ...Рамка -->
+				
+			<!-- ...Тело страницы -->
+			
+			<!-- Футер... -->
+				<div class="Footer"></div>
+			<!-- ...Футер -->
+			
+		</div>
+		<!-- ...Шапка -->
+	</div>
+	<!-- ...Блок страницы задающий общую, минимальную ширину страницы -->
+
+</body>
+</html>

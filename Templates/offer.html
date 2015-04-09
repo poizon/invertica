@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.js"></script>
+	<script type="text/javascript" src="js/jquery.asmselect.js"></script>
+	<script type="text/javascript" src="js/ui.datepicker.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("select[multiple]").asmSelect({
+				addItemTarget: 'bottom',
+				animate: true,
+				highlight: true,
+				sortable: true
+			});
+		}); 
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#example').attachDatepicker();
+			$('#exampleRange').attachDatepicker({
+				rangeSelect: true,
+				yearRange: '2009:2020',
+				firstDay: 1
+			});
+		});
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Рабочее место владельца контента</title>
+
+</head>
+
+<body>
+
+	<!-- Блок страницы задающий общую, минимальную ширину страницы... -->
+	<div class="AllBody">
+
+		<!-- Шапка... -->
+		<div class="HeaderBlock">
+		
+			<!-- Логотип... -->
+			<div class="Logo"></div>
+			<!-- ...Логотип -->
+			
+			<!-- Главное меню... -->
+				<div class="MenuBox">
+					<div class="MnuMyResourcesOff" onclick="document.location='index.html'" onmouseover="this.className='MnuMyResourcesOn'" onmouseout="this.className='MnuMyResourcesOff'"></div>
+					<div class="MnuMarketSel" onclick="document.location='market.html'"></div>
+					<div class="MnuContactOff" onclick="document.location='#'" onmouseover="this.className='MnuContactOn'" onmouseout="this.className='MnuContactOff'"></div>
+					<div class="MnuStatisticsOff" onclick="document.location='stat.html'" onmouseover="this.className='MnuStatisticsOn'" onmouseout="this.className='MnuStatisticsOff'"></div>
+					<div class="MnuAnalyticsOff" onclick="document.location='#'" onmouseover="this.className='MnuAnalyticsOn'" onmouseout="this.className='MnuAnalyticsOff'"></div>
+					<div class="MnuPersonalareaOff" onclick="document.location='cab.html'" onmouseover="this.className='MnuPersonalareaOn'" onmouseout="this.className='MnuPersonalareaOff'"></div>
+				</div>
+			<!-- ...Главное меню -->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			<div class="HeadLine"></div>
+			
+			<!-- Меню вотрого уровня... --->
+			<div class="SubMenuSel"><a href="market.html">Мои предложения</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuOff"><a href="otheroffers.html">Предложения других поставщиков</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuOff"><a href="bidding.html">Торги</a></div>
+			<!-- ...Меню вотрого уровня --->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			
+			<!-- Тело страницы... -->
+		
+				<div class="h1"><a href="market.html">Мои предложения</a> / Текущее предложение</div>
+
+				<!-- Рамка... -->
+				<div class="FrameTop"></div>
+				<div class="FrameMid">
+
+				
+						<div class="FrmColLeft">
+
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<th><div class="h2">Предложение</div></th>
+								</tr>
+							</table>
+
+							<table class="FrmTabs" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<th>Название предложения:</th>
+									<td>TOP 20</td>
+								</tr>
+								<tr>
+									<th>Тип предложения:</th>
+									<td>Дистрибуция</td>
+								</tr>
+								<tr>
+									<th>Период действия:</th>
+									<td >с 01.09.2009 по 20.09.09</td>
+								</tr>
+								<tr>
+									<th>Регион:</th>
+									<td>Москва, Петербург, новгород, Калининград.</td>
+								</tr>
+								<tr>
+									<th>Возраст:</th>
+									<td>25&#8211;30</td>
+								</tr>
+								<tr>
+									<th>Пол:</th>
+									<td >Мужской</td>
+								</tr>
+								<tr>
+									<th>Доход:</th>
+									<td >1000&#8211;10000</td>
+								</tr>
+								<tr>
+									<th>Устройство доступа:</th>
+									<td >Все</td>
+								</tr>
+								<tr>
+									<th>Срок контракта:</th>
+									<td >1 год</td>
+								</tr>
+								<tr>
+									<th>Коментарии:</th>
+									<td >Терминаторр 3, Матрица и многое другое...</td>
+								</tr>
+								<tr>
+									<th>Цена:</th>
+									<td >Договорная</td>
+								</tr>
+							</table>
+
+						</div>
+					
+						<div class="FrmColRight">
+
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<th><div class="h2">Медиа объекты</div></th>
+								</tr>
+								<tr class="ItemUnsel" onclick="document.location='image.html'" onmouseover="this.className='ItemSel'" onmouseout="this.className='ItemUnsel'">
+									<td>Терминатор 3</td>
+								</tr>
+								<tr class="ItemUnsel" onclick="document.location='file.html'" onmouseover="this.className='ItemSel'" onmouseout="this.className='ItemUnsel'">
+									<td>Матрица</td>
+								</tr>
+								<tr class="ItemUnsel" onclick="document.location='file.html'" onmouseover="this.className='ItemSel'" onmouseout="this.className='ItemUnsel'">
+									<td>Парк культуры и отдыха</td>
+								</tr>
+								<tr class="ItemUnsel" onclick="document.location='image.html'" onmouseover="this.className='ItemSel'" onmouseout="this.className='ItemUnsel'">
+									<td>День когда Земля остановилась</td>
+								</tr>
+								<tr class="ItemUnsel" onclick="document.location='file.html'" onmouseover="this.className='ItemSel'" onmouseout="this.className='ItemUnsel'">
+									<td>Матрица 2: Перезагрузка</td>
+								</tr>
+								<tr class="ItemUnsel" onclick="document.location='file.html'" onmouseover="this.className='ItemSel'" onmouseout="this.className='ItemUnsel'">
+									<td>Затерянный мир</td>
+								</tr>
+							</table>
+
+
+						</div>
+						
+						<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+					
+						<div class="BtnBox">
+							<div class="BtnCopyOff" onclick="document.location='#'" onmouseover="this.className='BtnCopyOn'" onmouseout="this.className='BtnCopyOff'"></div>
+							<div class="BtnExtendOff" onclick="document.location='#'" onmouseover="this.className='BtnExtendOn'" onmouseout="this.className='BtnExtendOff'"></div>
+						</div>
+					
+
+					
+				</div>
+				<div class="FrameBot"></div>
+				<!-- ...Рамка -->
+
+
+				<div style="width: 40px; height: 40px; clear: both;"><spacer type="block" width="40" height="40"></div>
+
+
+				<!-- Рамка... -->
+				<div class="FrameTop"></div>
+				<div class="FrameMid">
+
+					<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+					
+					<div class="FrmColLeft">
+						<div class="h3">Отклики на предложение</div>
+					</div>
+					
+
+					
+					<div style="width: 20px; height: 20px; clear: both;"><spacer type="block" width="20" height="20"></div>
+
+					<table width="830" align="center" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<th>Участник</th>
+							<th>Коментарии</th>
+						</tr>
+						<tr class="ItemUnsel" onclick="document.location='#'" onmouseover="this.className='ItemSel'" onmouseout="this.className='ItemUnsel'">
+							<td>Василий Пупкин</td>
+							<td style="font-size: 12px;">
+								Кстати, &laquo;мгновения&raquo;, наверное, единственный фильм о войне, который я вообще смотрела без
+								чувства борьбы над собой. Нет там бойцов с дикими выраженьями лиц отчаянно строчащих с пулемета &#8212;
+								врешь, мол, фашист, не пройдешь, мол. Нет солдат, которые корчацо в страшных муках перед кинокамерой,
+								когда фашистская пуля пробивает им грудь или ногу.
+							</td>
+						</tr>
+						<tr class="ItemUnsel" onclick="document.location='#'" onmouseover="this.className='ItemSel'" onmouseout="this.className='ItemUnsel'">
+							<td>Иван Табуреткин</td>
+							<td style="font-size: 12px;">
+								Нету невест и матерей всяких там, стиснувших зубы, остекленевшими глазами смотрящих в бездонное небо,
+								одновременно сжимающих в натруженных руках похоронку. И непременно пестня фоном, что-нибудь типа
+								&laquo;жди меня&raquo;. В общем, нет всех тех моментов, заставляющих меня смеяться там, где
+								добропорядочным гражданам положено сопереживать.
+							</td>
+						</tr>						
+					</table>
+					
+					<div style="width: 20px; height: 20px; clear: both;"><spacer type="block" width="20" height="20"></div>
+					
+				</div>
+				<div class="FrameBot"></div>
+				<!-- ...Рамка -->
+
+
+
+
+			<!-- ...Тело страницы -->
+			
+			<!-- Футер... -->
+				<div class="Footer"></div>
+			<!-- ...Футер -->
+			
+		</div>
+		<!-- ...Шапка -->
+	</div>
+	<!-- ...Блок страницы задающий общую, минимальную ширину страницы -->
+
+</body>
+</html>

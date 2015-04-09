@@ -1,0 +1,38 @@
+# данные для БД
+---
+db:
+    hostname: localhost
+    username: user_api
+    password: devdev
+    database: Invertica
+# данные для скрипта загрузки с фтп
+# указывать относительные пути в системе (относительно каталога проекта)
+upload:
+    to_dir:       upload
+    log:          logs
+    pid_file:    .logwpid
+    pid_upload:   .uplpid
+# данные для memcached сервера
+memc:
+    server:   127.0.0.1:11211
+    compress: 10000
+#  данные для БД биллинга
+db_billing:
+    hostname: 193.164.132.203
+    username: user_api
+    password: devdev
+    database: billing
+#  данные для SOAP биллинга
+soap:
+    url: http://127.0.0.1:34012
+    username: admin
+    password: invertica
+# путь к лог файлу системы
+log:
+    file: /home/poiz/develop/Invertica/invertica.log
+page:
+    rows: 2
+# каталог хранения файлов правообладателя (локальный и web)
+dir:
+    files: /var/www/img/uploads	
+    web: http://localhost/img/uploads	

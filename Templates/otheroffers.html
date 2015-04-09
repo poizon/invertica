@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Рабочее место владельца контента</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+<body>
+
+	<!-- Блок страницы задающий общую, минимальную ширину страницы... -->
+	<div class="AllBody">
+
+		<!-- Шапка... -->
+		<div class="HeaderBlock">
+		
+			<!-- Логотип... -->
+			<div class="Logo"></div>
+			<!-- ...Логотип -->
+			
+			<!-- Главное меню... -->
+				<div class="MenuBox">
+					<div class="MnuMyResourcesOff" onclick="document.location='index.html'" onmouseover="this.className='MnuMyResourcesOn'" onmouseout="this.className='MnuMyResourcesOff'"></div>
+					<div class="MnuMarketSel" onclick="document.location='market.html'"></div>
+					<div class="MnuContactOff" onclick="document.location='#'" onmouseover="this.className='MnuContactOn'" onmouseout="this.className='MnuContactOff'"></div>
+					<div class="MnuStatisticsOff" onclick="document.location='stat.html'" onmouseover="this.className='MnuStatisticsOn'" onmouseout="this.className='MnuStatisticsOff'"></div>
+					<div class="MnuAnalyticsOff" onclick="document.location='#'" onmouseover="this.className='MnuAnalyticsOn'" onmouseout="this.className='MnuAnalyticsOff'"></div>
+					<div class="MnuPersonalareaOff" onclick="document.location='cab.html'" onmouseover="this.className='MnuPersonalareaOn'" onmouseout="this.className='MnuPersonalareaOff'"></div>
+				</div>
+			<!-- ...Главное меню -->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			<div class="HeadLine"></div>
+			
+			<!-- Меню вотрого уровня... --->
+			<div class="SubMenuOff"><a href="market.html">Мои предложения</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuSel"><a href="otheroffers.html">Предложения других поставщиков</a></div>
+			<div class="SubMenuSep"></div>
+			<div class="SubMenuOff"><a href="bidding.html">Торги</a></div>
+			<!-- ...Меню вотрого уровня --->
+			
+			<div style="width: 10px; height: 10px; clear: both;"><spacer type="block" width="10" height="10"></div>
+			
+			<!-- Тело страницы... -->
+		
+				<div class="h1">Предложения от других поставщиков</div>
+				
+				<!-- Рамка... -->
+				<div class="FrameTop"></div>
+				<div class="FrameMid">
+
+				<form id="form1" name="form1" method="post" action="">
+
+					<div class="FrmColLeft">
+
+							<table style="border: 0;" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<div class="FrmLabel">Участник</div>
+										<select style="width: 185px;" name="Video" id="Video" onchange="MM_jumpMenu('parent',this,0)">
+											<option value="1">Все</option>
+											<option value="2">Иван Петров</option>
+											<option value="3">Петр Иванов</option>
+										</select>
+									</td>
+									<td>
+										<div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div>
+									</td>
+									<td>
+										<div class="FrmLabel">Уже есть договора</div>
+										<select style="width: 185px;" name="Video" id="Video" onchange="MM_jumpMenu('parent',this,0)">
+											<option value="1">Все</option>
+											<option value="2">Не все</option>
+											<option value="3">Еще что-то</option>
+										</select>
+									</td>
+								</tr>
+							</table>
+
+					</div>
+					
+					<div class="FrmColRight">
+
+							<table style="border: 0;" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<div class="FrmLabel">Тип предложения</div>
+										<select style="width: 185px;" name="Video" id="Video" onchange="MM_jumpMenu('parent',this,0)">
+											<option value="1">Все</option>
+											<option value="2">Конвертация</option>
+											<option value="3">Дистрибуция</option>
+										</select>
+									</td>
+									<td>
+										<div style="width: 20px; height: 10px; clear: both;"><spacer type="block" width="20" height="10"></div>
+									</td>
+									<td>
+										<div class="FrmLabel">Искать по названию</div>
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+													<td class="FrmInput"><input style="width: 173px;" type="text" name="Name" id="Name" /></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+
+					</div>	
+
+					</form>
+
+					<div style="width: 20px; height: 20px; clear: both;"><spacer type="block" width="20" height="20"></div>
+
+					<table width="830" align="center" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<th>Тип предложения</th>
+							<th>Участник</th>
+							<th>Название</th>
+							<th>Коментарии</th>
+							<th>Есть договор</th>
+							<th style="text-align: right;">Период действия предложения</th>
+							<th style="text-align: right;">Цена</th>
+						</tr>
+						<tr class="ItemUnsel" onclick="document.location='invertica.html'" onmouseover="this.className='ItemSel'" onmouseout="this.className='ItemUnsel'">
+							<td style="font-size: 12px;">Дистрибуция</td>
+							<td style="font-size: 12px;">ООО &laquo;Панорама&raquo;</td>
+							<td style="font-size: 12px;">Фильмы о войне</td>
+							<td style="font-size: 12px;">Десять советских фильмов о войне для любого возраста</td>
+							<td><img style="border: 0;" src="img/check.gif" width="17" height="14"></td>
+							<td style="text-align: right; font-size: 12px;">с 01.09.09<br>по 01.10.09</td>
+							<td style="text-align: right; font-size: 12px;">Договорная</td>
+						</tr>
+						<tr class="ItemUnsel" onclick="document.location='invertica.html'" onmouseover="this.className='ItemSel'" onmouseout="this.className='ItemUnsel'">
+							<td style="font-size: 12px;">Конвертация</td>
+							<td style="font-size: 12px;">ООО &laquo;КиК&raquo;</td>
+							<td style="font-size: 12px;">В MPEG4</td>
+							<td style="font-size: 12px;">Быстро и очень качественно перегоню из любого формата в DivX</td>
+							<td><img style="border: 0;" src="img/check.gif" width="17" height="14"></td>
+							<td style="text-align: right; font-size: 12px;">с 01.09.09<br>по 01.10.09</td>
+							<td style="text-align: right; font-size: 12px;">$1 час</td>
+						</tr>
+						<tr class="ItemUnsel" onclick="document.location='invertica.html'" onmouseover="this.className='ItemSel'" onmouseout="this.className='ItemUnsel'">
+							<td style="font-size: 12px;">Дистрибуция</td>
+							<td style="font-size: 12px;">ООО &laquo;Кино&raquo;</td>
+							<td style="font-size: 12px;">Фильмы о войне</td>
+							<td style="font-size: 12px;">Десять советских фильмов о войне для любого возраста</td>
+							<td>&nbsp;</td>
+							<td style="text-align: right; font-size: 12px;">с 01.09.09<br>по 01.10.09</td>
+							<td style="text-align: right; font-size: 12px;">Договорная</td>
+						</tr>
+						<tr class="ItemUnsel" onclick="document.location='invertica.html'" onmouseover="this.className='ItemSel'" onmouseout="this.className='ItemUnsel'">
+							<td style="font-size: 12px;">Конвертация</td>
+							<td style="font-size: 12px;">Компания &laquo;Табуреткин&raquo;</td>
+							<td style="font-size: 12px;">В MPEG4</td>
+							<td style="font-size: 12px;">Быстро и очень качественно перегоню из любого формата в DivX</td>
+							<td><img style="border: 0;" src="img/check.gif" width="17" height="14"></td>
+							<td style="text-align: right; font-size: 12px;">с 01.09.09<br>по 01.10.09</td>
+							<td style="text-align: right; font-size: 12px;">$1 час</td>
+						</tr>
+					</table>
+					
+					<div class="BtnBox">
+						<div class="BtnHistoryOffersOff" onclick="document.location='#'" onmouseover="this.className='BtnHistoryOffersOn'" onmouseout="this.className='BtnHistoryOffersOff'"></div>
+					</div>
+					
+				</div>
+				<div class="FrameBot"></div>
+				<!-- ...Рамка -->
+				
+
+			<!-- ...Тело страницы -->
+			
+			<!-- Футер... -->
+				<div class="Footer"></div>
+			<!-- ...Футер -->
+			
+		</div>
+		<!-- ...Шапка -->
+	</div>
+	<!-- ...Блок страницы задающий общую, минимальную ширину страницы -->
+
+</body>
+</html>
